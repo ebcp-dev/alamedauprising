@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 
 const app = express()
-const port = 5000
+const port = process.env.PORT
 
 //route paths
 const index = require('./routes/index')
@@ -23,6 +23,6 @@ app.use(express.static(path.join(__dirname, 'public')))
 //use route paths
 app.use('/', index)
 
-app.listen(port, () => {
+app.listen(port || 5000, () => {
     console.log(`Server started on port ${port}.`)
 })
