@@ -4,7 +4,7 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 
 const app = express()
-const port = process.env.PORT
+const port = process.env.PORT ? process.env.PORT : 3000
 
 //route paths
 const index = require('./routes/index')
