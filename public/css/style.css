@@ -1,163 +1,55 @@
+html,
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+  height: 100%;
 }
-h3, h4 {
-  color: #F97CFF;
-  font-weight: bold;
+/* Navigation*/
+        
+.navbar {
+  background-color: transparent;
 }
-h5, a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #F97CFF;
-  font-weight: bold;
+        
+.top-nav-collapse {
+  background-color: #304a74;
 }
-#iglogo {
-  height: 50px;
-  width: 50px;
-  padding: 5px;
-  margin: 10px;
+        
+footer.page-footer {
+  background-color: #304a74;
 }
-.logo {
-  height: 40px;
-  width: 40px;
+        
+@media only screen and (max-width: 768px) {
+  .navbar {
+    background-color: #4285F4;
+  }
 }
-.no-padding {
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  padding-bottom: 0;
+        
+.scrolling-navbar {
+  -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
+  transition: background .5s ease-in-out, padding .5s ease-in-out;
 }
-.navbar-custom {
-    background-color: rgba(255, 255, 255, 1);
-		border-radius: 0;
-		border-style: none ;
-    transition: 0.5s ease;
+/* Carousel*/
+        
+.carousel {
+  height: 50%;
 }
-.navbar-custom:hover {
-  background-color: #00F4FF;
-}
-/* change the brand and text color */
-.navbar-custom .navbar-brand,
-.navbar-custom .navbar-text {
-    color: #F97CFF;
-}
-/* change the link color */
-.navbar-custom .navbar-nav .nav-link {
-    text-transform: uppercase;
-    color: #F97CFF;
-}
-/* change the color of active or hovered links */
-.navbar-custom .navbar-brand.active,
-.navbar-custom .navbar-brand:hover,
-.navbar-custom .nav-item.active .nav-link,
-.navbar-custom .nav-item:hover .nav-link {
-    color: white;
-}
-.navbar-custom .dropdown-item {
-    color: #00FFED;
-}
-.footer {
-	padding: 35px;
-  color: #e9ece5;
-}
-.img-fluid {
-	width: 100%;
-	max-height: 620px;
-  border-radius: 0;
-}
-#schedule, .footer {
-  padding: 20px;
-  transition: 0.5s ease;
-}
-#schedule:hover, .footer:hover {
-  background-color: #00F4FF;
-}
-.event, .contactinfo {
-  transition: 0.5s ease;
-}
-.event:hover, .contactinfo:hover {
-  color: white;
-}
-/* hovereffects */
-.hovereffect {
-    width: 100%;
+        
+@media (max-width: 776px) {
+  .carousel {
     height: 100%;
-    float: left;
-    overflow: hidden;
-    position: relative;
-    text-align: center;
-    cursor: default;
-    background-color: #00FFED;
+  }
 }
-
-.hovereffect .overlay {
-    width: 100%;
+        
+.carousel-item,
+  .active {
     height: 100%;
-    position: absolute;
-    overflow: hidden;
-    top: 0;
-    left: 0;
-    padding: 3em;
-    text-align: left;
 }
-
-.hovereffect img {
-    background-color: #FF00F8;
-    display: block;
-    position: relative;
-    max-width: none;
-    max-height: 500px;
-    width: calc(100% + 60px);
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.45s;
-    transition: opacity 0.35s, transform 0.45s;
-    -webkit-transform: translate3d(-40px,0,0);
-    transform: translate3d(-40px,0,0);
+        
+.carousel-inner {
+  height: 100%;
 }
-
-.hovereffect h3 {
-    text-transform: uppercase;
-    color: #FF00F8;
-    position: relative;
-    font-size: 180%;
-    font-weight: 900;
-    background-color: transparent;
-    padding: 5px 0 0 0;
-    text-align: center;
-}
-
-.hovereffect .overlay:before {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    bottom: 20px;
-    left: 20px;
-    opacity: 0;
-    filter: alpha(opacity=0);
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.45s;
-    transition: opacity 0.35s, transform 0.45s;
-    -webkit-transform: translate3d(-20px,0,0);
-    transform: translate3d(-20px,0,0);
-}
-
-.hovereffect h3 {
-    font-weight: 800;
-    color: #FF00F8;
-    opacity: 0;
-    text-decoration: none;
-    filter: alpha(opacity=0);
-    -webkit-transition: opacity 0.35s, -webkit-transform 0.45s;
-    transition: opacity 0.35s, transform 0.45s;
-    -webkit-transform: translate3d(-10px,0,0);
-    transform: translate3d(-10px,0,0);
-}
-.hovereffect:hover img {
-    opacity: 0.5;
-    filter: alpha(opacity=60);
-    -webkit-transform: translate3d(0,0,0);
-    transform: translate3d(0,0,0);
-}
-.hovereffect:hover h3 {
-    opacity: 1;
+        
+/*Caption*/
+        
+.flex-center {
+  color: #fff;
 }
