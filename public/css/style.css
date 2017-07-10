@@ -9,16 +9,16 @@ body {
 }
         
 .top-nav-collapse {
-  background-color: #304a74;
+  background-color: #FF5CE7;
 }
         
 footer.page-footer {
-  background-color: #304a74;
+  background-color: #FF5CE7;
 }
         
 @media only screen and (max-width: 768px) {
   .navbar {
-    background-color: #4285F4;
+    background-color: rgba(255, 92, 231, 0.8);
   }
 }
         
@@ -53,3 +53,10 @@ footer.page-footer {
 .flex-center {
   color: #fff;
 }
+
+/*Buttons*/
+
+.btn {
+  background-color: #00E0FF;
+}
+/*Buttons*/
