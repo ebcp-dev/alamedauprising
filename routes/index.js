@@ -67,9 +67,20 @@ let pics = [
     "coketourny7",
 ]
 
+let assistantcoaches = [
+    "Alvin Young",
+    "Will Mustain",
+    "Rob Kiener",
+    "Olosau Tasi"
+]
+
+let headcoach = "Ali Ravan"
+
+let generalmanager = "Mehdi Ravan"
+
 //get homepage
 router.get('/', function(req, res) {
-    res.render('index', {roster, pics})
+    res.render('index', {roster, pics, assistantcoaches, headcoach, generalmanager})
 })
 
 module.exports = router
