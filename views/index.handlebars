@@ -12,18 +12,19 @@
         <div class="carousel-inner" role="listbox">
 
             <!-- First slide -->
-            <div class="carousel-item active view hm-black-light" style="background-image: url('images/dayonetourn.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item active view hm-black-light" style="background-image: url('images/coketourny3.jpg'); background-repeat: no-repeat; background-size: cover;">
                 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
                     <ul class="animated fadeIn col-md-12">
                         <li>
-                            <h1 class="h1-responsive">Gimme some decent pictures boi.</h1></li>
-                        <li>
-                            <p>I can make this site pretty.</p>
+                            <p>We Are</p>
+                        </li>
+                        <li class="pinktext">
+                            <h1 class="h1-responsive">Alameda Uprising</h1></li>
                         </li>
                         <li>
-                            <a target="_blank" href="#" class="btn btn-info btn-lg" rel="nofollow">A Button.</a>
+                            <p>Alameda, California</p>
                         </li>
                     </ul>
                 </div>
@@ -33,43 +34,18 @@
             <!--/.First slide-->
 
             <!-- Second slide -->
-            <div class="carousel-item view hm-black-light" style="background-image: url('images/teampic3.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item view hm-black-light" style="background-image: url('images/coketourny2.jpg'); background-repeat: no-repeat; background-size: cover;">
                 
                 <!-- Caption -->
-                <div class="full-bg-img flex-center white-text">
-                    <ul class="animated fadeIn col-md-12">
-                        <li>
-                            <h1 class="h1-responsive">Need more details about your team.</h1>
-                        </li>
-                        <li>
-                            <p>Also need upcoming schedule.</p>
-                        </li>
-                        <li>
-                            <a target="_blank" href="#" class="btn btn-info btn-lg" rel="nofollow">Give Schedule</a>
-                        </li>
-                    </ul>
-                </div>
                 <!-- /.Caption -->
                 
             </div>
             <!--/.Second slide -->
 
             <!-- Third slide -->
-            <div class="carousel-item view hm-black-light" style="background-image: url('images/teampic1.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item view hm-black-light" style="background-image: url('images/coketourny7.jpg'); background-repeat: no-repeat; background-size: cover;">
                 
                 <!-- Caption -->
-                <div class="full-bg-img flex-center white-text">
-                    <ul class="animated fadeIn col-md-12">
-                        <li>
-                            <h1 class="h1-responsive">Damn this website pretty.</h1></li>
-                        <li>
-                            <p>I need to get paid more.</p>
-                        </li>
-                        <li>
-                            <a target="_blank" href="#" class="btn btn-default btn-lg" rel="nofollow">Need college funds.</a>
-                        </li>
-                    </ul>
-                </div>
                 <!-- /.Caption -->
                 
             </div>
@@ -102,9 +78,9 @@
 
                     <!--Card image-->
                     <div class="view overlay hm-white-slight">
-                        <img src="images/teampic2.jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
+                        <img src="images/coketourny4.jpg" class="img-fluid" alt="">
+                        <a href="#!">
+                            <div class="mask waves-effect waves-light"></div>
                         </a>
                     </div>
                     <!--/.Card image-->
@@ -112,10 +88,10 @@
                     <!--Card content-->
                     <div class="card-block" id="schedule">
                         <!--Title-->
-                        <h4 class="card-title">Whachu want in here?</h4>
+                        <h4 class="card-title">Schedule</h4>
                         <!--Text-->
-                        <p class="card-text">Some shit here.</p>
-                        <a href="#" class="btn btn-info">Click this shit</a>
+                        <p class="card-text">Upcoming games.</p>
+                        <a href="#!" class="btn btn-info">See schedule</a>
                     </div>
                     <!--/.Card content-->
 
@@ -131,9 +107,9 @@
 
                     <!--Card image-->
                     <div class="view overlay hm-white-slight">
-                        <img src="images/teampic3.jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
+                        <img src="images/coketourny5.jpg" class="img-fluid" alt="">
+                        <a href="#!">
+                            <div class="mask waves-effect waves-light"></div>
                         </a>
                     </div>
                     <!--/.Card image-->
@@ -141,10 +117,27 @@
                     <!--Card content-->
                     <div class="card-block" id="roster">
                         <!--Title-->
-                        <h4 class="card-title">Roster?</h4>
+                        <h4 class="card-title">Roster</h4>
                         <!--Text-->
-                        <p class="card-text">Probly roster.</p>
-                        <a href="#" class="btn btn-info">Click for more shit</a>
+                        <p class="card-text">Meet our players.</p>
+                        <a href="#rosterlist" 
+                        class="btn btn-info" data-toggle="collapse"
+                        aria-expanded="false" aria-controls="rosterlist"
+                        >
+                        See Roster
+                        </a>
+                        <div class="collapse" id="rosterlist">
+                            <div class="card-block">
+                                <ul class="list-group">
+                                    {{#each roster}}
+                                    <li class="list-group-item justify-content-between">
+                                        {{name}}
+                                        <span class="badge badge-primary badge-pill">{{jersey}}</span>
+                                    </li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                     <!--/.Card content-->
 
@@ -160,20 +153,36 @@
 
                     <!--Card image-->
                     <div class="view overlay hm-white-slight">
-                        <img src="images/teampic1.jpg" class="img-fluid" alt="">
-                        <a href="#">
-                            <div class="mask"></div>
+                        <img src="images/coketourny1.jpg" class="img-fluid" alt="">
+                        <a href="#!">
+                            <div class="mask waves-effect waves-light"></div>
                         </a>
                     </div>
                     <!--/.Card image-->
 
                     <!--Card content-->
-                    <div class="card-block" id="content">
+                    <div class="card-block" id="gallery">
                         <!--Title-->
-                        <h4 class="card-title">Some basketball shit?</h4>
+                        <h4 class="card-title">Gallery</h4>
                         <!--Text-->
-                        <p class="card-text">More bullshit.</p>
-                        <a href="#" class="btn btn-info">Click for bullshit</a>
+                        <p class="card-text">Team pictures.</p>
+                        <a href="#pictures" 
+                        class="btn btn-info" data-toggle="collapse"
+                        aria-expanded="false" aria-controls="pictures"
+                        >
+                        See Gallery
+                        </a>
+                        <div class="collapse" id="pictures">
+                            {{#each pics}}
+                            <div class="container">
+                            <div class="row">
+                                <div class="card">
+                                    <img class="img-fluid" src="images/{{this}}.jpg">
+                                </div>
+                            </div>
+                            </div>
+                            {{/each}}
+                        </div>
                     </div>
                     <!--/.Card content-->
 

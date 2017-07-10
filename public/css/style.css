@@ -18,7 +18,7 @@ footer.page-footer {
         
 @media only screen and (max-width: 768px) {
   .navbar {
-    background-color: rgba(255, 92, 231, 0.8);
+    background-color: rgba(255, 92, 231, 0.9);
   }
 }
         
@@ -28,7 +28,11 @@ footer.page-footer {
   transition: background .5s ease-in-out, padding .5s ease-in-out;
 }
 /* Carousel*/
-        
+
+.pinktext {
+  color: #FF5CE7;
+}
+
 .carousel {
   height: 50%;
 }
@@ -56,7 +60,20 @@ footer.page-footer {
 
 /*Buttons*/
 
-.btn {
+.btn-info {
   background-color: #00E0FF;
 }
+
+.btn-ins {
+  background-color: #007397;
+}
+
+.btn-fb {
+  background-color: #006AB8;
+}
+
+.btn-tw {
+  background-color: #00C2FF;
+}
+
 /*Buttons*/
