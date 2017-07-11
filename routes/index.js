@@ -57,6 +57,17 @@ let roster = [
     }
 ]
 
+let schedule = [
+    {
+        name: "Jam On It tournament",
+        organizer: "Las Vegas Grand Finale",
+        date: "July 21-23",
+        address: "Las Vegas, NV",
+        location: "Las Vegas Convention Center - South Hall",
+        link: "http://lasvegasgrandfinale.com/"
+    }
+]
+
 let pics = [
     "coketourny1",
     "coketourny2",
@@ -80,7 +91,7 @@ let generalmanager = "Mehdi Ravan"
 
 //get homepage
 router.get('/', function(req, res) {
-    res.render('index', {roster, pics, assistantcoaches, headcoach, generalmanager})
+    res.render('index', {roster, pics, assistantcoaches, headcoach, generalmanager, schedule})
 })
 
 module.exports = router

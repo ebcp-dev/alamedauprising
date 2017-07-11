@@ -92,11 +92,12 @@
                 <div class="card wow fadeIn" data-wow-delay="0.2s"  id="schedule">
 
                     <!--Card image-->
-                    <div class="view overlay hm-white-slight">
+                    <div class="view hm-cyan-light">
                         <img src="images/coketourny4.jpg" class="img-fluid" alt="">
-                        <a href="#!">
-                            <div class="mask waves-effect waves-light"></div>
-                        </a>
+                        <div class="card card-block mask flex-center white-text">
+                            <h2 class="h2-responsive">{{schedule.0.date}}</h2>
+                            <h3 class="h3-responsive">{{schedule.0.address}}</h3>
+                        </div>
                     </div>
                     <!--/.Card image-->
 
@@ -105,7 +106,7 @@
                         <!--Title-->
                         <h4 class="card-title">Schedule</h4>
                         <!--Text-->
-                        <p class="card-text">Upcoming games.</p>
+                        <p class="card-text">See our upcoming games.</p>
                         <a href="#gameschedule" 
                         class="btn btn-info" data-toggle="collapse"
                         aria-expanded="false" aria-controls="gameschedule"
@@ -114,7 +115,14 @@
                         </a>
                         <div class="collapse" id="gameschedule">
                             <div class="card-block">
-                                TBA
+                                {{#each schedule}}
+                                <h4 class="card-title">{{name}}</h4>
+                                <h4 class="card-title">{{date}}</h4>
+                                <h4 class="card-title">{{address}}</h4>
+                                <p class="card-text">{{location}}</p>
+                                <p class="card-text">by {{organizer}}</p>
+                                <a target="_blank" href="{{link}}" class="btn btn-primary">Click for more details</a>
+                                {{/each}}
                             </div>
                         </div>
                     </div>
@@ -144,7 +152,7 @@
                         <!--Title-->
                         <h4 class="card-title">Roster</h4>
                         <!--Text-->
-                        <p class="card-text">Meet our players.</p>
+                        <p class="card-text">Meet our players and coaching staff.</p>
                         <a href="#rosterlist" 
                         class="btn btn-info" data-toggle="collapse"
                         aria-expanded="false" aria-controls="rosterlist"
@@ -195,7 +203,7 @@
                 <!--/.Card-->
             </div>
             <!--Second columnn-->
-
+            
             <!--Third columnn-->
             <div class="col-lg-4">
                 <!--Card-->

@@ -8,6 +8,11 @@ body {
 .navbar {
   background-color: transparent;
 }
+
+/*.navbar-custom .navbar-brand > strong,
+.navbar-custom .navbar-collapse .navbar-nav .nav-item {
+  color: #00E0FF;
+}*/
         
 .top-nav-collapse {
   background-color: #FF5CE7;
@@ -16,12 +21,14 @@ body {
 footer.page-footer {
   background-color: #FF5CE7;
 }
-        
+
+/*solid navbar on mobile      
 @media only screen and (max-width: 768px) {
   .navbar {
     background-color: rgba(255, 92, 231, 0.9);
   }
 }
+*/
         
 .scrolling-navbar {
   -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
