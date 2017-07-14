@@ -1,7 +1,5 @@
 <!--Carousel Wrapper-->
     <div id="home" class="carousel slide carousel-fade white-text" data-ride="carousel" data-interval="false">
-        <!--Indicators-->
-        <!--/.Indicators-->
 
         <!--Slides-->
         <div class="carousel-inner" role="listbox">
@@ -93,7 +91,7 @@
 
                     <!--Card image-->
                     <div class="view hm-cyan-light">
-                        <img src="images/coketourny4.jpg" class="img-fluid" alt="">
+                        <img src="images/coketourny3.jpg" class="img-fluid" alt="">
                         <div class="card card-block mask flex-center white-text">
                             <h2 class="h2-responsive">{{schedule.0.date}}</h2>
                             <h3 class="h3-responsive">{{schedule.0.location}}</h3>
@@ -217,10 +215,7 @@
 
                     <!--Card image-->
                     <div class="view overlay hm-white-slight">
-                        <img src="images/coketourny1.jpg" class="img-fluid" alt="">
-                        <a href="#!">
-                            <div class="mask waves-effect waves-light"></div>
-                        </a>
+                        <img src="images/coketourny8.jpg" class="img-fluid" alt="">
                     </div>
                     <!--/.Card image-->
 
@@ -237,9 +232,31 @@
                         See Gallery
                         </a>
                         <div class="collapse" id="pictures">
-                            <div class="gallery">
+                            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                                <div class="slides"></div>
+                                <h3 class="title"></h3>
+                                <a class="prev">‹</a>
+                                <a class="next">›</a>
+                                <a class="close">×</a>
+                                <a class="play-pause"></a>
+                                <ol class="indicator"></ol>
+                            </div>
+                            <div id="links">
+                                {{#each albums}}
+                                <div class="card">
+                                    <div class="view overlay hm-white-slight">
+                                        <img class="img-fluid" src="images/coketourny1.jpg" alt="album cover">
+                                    </div>
+                                    <div class="card-block">
+                                        <h4 class="card-title">{{name}}</h4>
+                                        <p class="card-text">{{location}}<br>{{date}}</p>
+                                    </div>
+                                </div>
                                 {{#each pics}}
-                                <img class="img-fluid" src="images/{{this}}.jpg" alt="Card image cap">
+                                <a class="hide" href="images/{{this}}.jpg">
+                                    <img src="images/{{this}}.jpg" class="img-fluid" alt="picture">
+                                </a>
+                                {{/each}}
                                 {{/each}}
                             </div>
                         </div>

@@ -118,3 +118,11 @@ footer.page-footer {
 ::-webkit-scrollbar-thumb:window-inactive {
    background: #00E0FF;
 }
+
+/* Gallery */
+
+.hide {
+  display: none;
+}
+
+/* Gallery */

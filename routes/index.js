@@ -89,14 +89,25 @@ let schedule = [
     }
 ]
 
-let pics = [
-    "coketourny1",
-    "coketourny2",
-    "coketourny3",
-    "coketourny4",
-    "coketourny5",
-    "coketourny6",
-    "coketourny7",
+let albums = [
+    {
+        name: "Coca Cola Nationals",
+        location: "Los Angeles, CA",
+        date: "June 24-25",
+        pics: [
+            "coketourny1",
+            "coketourny2",
+            "coketourny3",
+            "coketourny4",
+            "coketourny5",
+            "coketourny6",
+            "coketourny7",
+            "coketourny8",
+            "coketourny9",
+            "coketourny10",
+            "coketourny11",
+        ]
+    },
 ]
 
 let assistantcoaches = [
@@ -112,7 +123,7 @@ let generalmanager = "Mehdi Ravan"
 
 //get homepage
 router.get('/', function(req, res) {
-    res.render('index', {roster, pics, assistantcoaches, headcoach, generalmanager, schedule})
+    res.render('index', {roster, albums, assistantcoaches, headcoach, generalmanager, schedule})
 })
 
 module.exports = router
