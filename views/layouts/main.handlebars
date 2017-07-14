@@ -4,6 +4,9 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
+        
+        <!-- Ekko Lightbox -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.css">
 
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
@@ -16,6 +19,9 @@
 
         <!-- Font Awesome -->
         <link rel="icon" type="image/jpg" href="images/aulogo.jpg">
+
+        <!-- blueimp -->
+        <link rel="stylesheet" href="css/blueimp-gallery.min.css">
 
         <title>Alameda Uprising</title>
     </head>
@@ -88,6 +94,9 @@
         </footer>
         <!--/.Footer-->
         
+        <!-- Lightbox -->
+        <script type="text/javascript" src="js/js/lightbox.js"></script>
+        <!-- jQuery -->
         <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
         <!-- Bootstrap tooltips -->
         <script type="text/javascript" src="js/tether.min.js"></script>
@@ -96,8 +105,17 @@
         <!-- MDB core JavaScript -->
         <script type="text/javascript" src="js/mdb.min.js"></script>
 
-        <!-- Animations
-        <script type="text/javascript" src="js/js/smoothscroll.js"></script> -->
+        <script src="js/blueimp-gallery.min.js"></script>
+        <script>
+        document.getElementById('links').onclick = function (event) {
+            event = event || window.event;
+            var target = event.target || event.srcElement,
+                link = target.src ? target.parentNode : target,
+                options = {index: link, event: event},
+                links = this.getElementsByTagName('a');
+            blueimp.Gallery(links, options);
+        };
+        </script>
 
         <link href="/css/style.css" rel="stylesheet" type="text/css">
   </body>

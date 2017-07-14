@@ -59,11 +59,32 @@ let roster = [
 
 let schedule = [
     {
-        name: "Jam On It tournament",
+        name: "Bay Area Sports Tournament - Junior Varsity",
+        organizer: "Bay Area Sports",
+        date: "July 15",
+        time: "9 AM PDT",
+        address: "12500 Campus Drive, Oakland, CA 94619",
+        location: "Oakland, CA",
+        details: "Merritt College, Jamtown",
+        link: "http://www.openball.com/seasonDivision/14676"
+    },
+    {
+        name: "Bay Area Sports Tournament - Varsity",
+        organizer: "Bay Area Sports",
+        date: "July 15",
+        time: "4 PM PDT",
+        address: "12500 Campus Drive, Oakland, CA 94619",
+        location: "Oakland, CA",
+        details: "Merritt College",
+        link: "http://www.openball.com/seasonDivision/14678"
+    },
+    {
+        name: "Jam On It Tournament",
         organizer: "Las Vegas Grand Finale",
         date: "July 21-23",
-        address: "Las Vegas, NV",
-        location: "Las Vegas Convention Center - South Hall",
+        address: "3150 Paradise Rd, Las Vegas, NV 89109",
+        location: "Las Vegas, NV",
+        details: "Las Vegas Convention Center - South Hall",
         link: "http://lasvegasgrandfinale.com/"
     }
 ]

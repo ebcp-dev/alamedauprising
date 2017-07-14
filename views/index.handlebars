@@ -81,7 +81,7 @@
     </div>
     <!--/.Carousel Wrapper-->
 
-<br>
+    <br>
 
 <!--Content-->
     <div class="container">
@@ -96,7 +96,10 @@
                         <img src="images/coketourny4.jpg" class="img-fluid" alt="">
                         <div class="card card-block mask flex-center white-text">
                             <h2 class="h2-responsive">{{schedule.0.date}}</h2>
-                            <h3 class="h3-responsive">{{schedule.0.address}}</h3>
+                            <h3 class="h3-responsive">{{schedule.0.location}}</h3>
+                            {{#if schedule.0.time}}
+                            <h3 class="h3-responsive">{{schedule.0.time}}</h3>
+                            {{/if}}
                         </div>
                     </div>
                     <!--/.Card image-->
@@ -117,10 +120,13 @@
                             <div class="card-block">
                                 {{#each schedule}}
                                 <h4 class="card-title">{{name}}</h4>
-                                <h4 class="card-title">{{date}}</h4>
-                                <h4 class="card-title">{{address}}</h4>
-                                <p class="card-text">{{location}}</p>
                                 <p class="card-text">by {{organizer}}</p>
+                                <h4 class="card-title">{{date}}</h4>
+                                <h4 class="card-title">{{location}}</h4>
+                                {{#if time}}
+                                <p class="card-text">{{time}}</p>
+                                {{/if}}
+                                <p class="card-text">{{address}}</p>
                                 <a target="_blank" href="{{link}}" class="btn btn-primary">Click for more details</a>
                                 {{/each}}
                             </div>
@@ -231,16 +237,11 @@
                         See Gallery
                         </a>
                         <div class="collapse" id="pictures">
-                            {{#each pics}}
-                            <div class="container">
-                            <div class="row">
-                                <div class="card">
-                                    <img class="img-fluid" src="images/{{this}}.jpg">
-                                </div>
-                                <br>
+                            <div class="gallery">
+                                {{#each pics}}
+                                <img class="img-fluid" src="images/{{this}}.jpg" alt="Card image cap">
+                                {{/each}}
                             </div>
-                            </div>
-                            {{/each}}
                         </div>
                     </div>
                     <!--/.Card content-->
