@@ -52,32 +52,16 @@ let roster = [
         jersey: 24
     },
     {
-        name: 'Elijah',
+        name: 'Elijah Twaggbe',
         jersey: 8
-    }
+    },
+    {
+        name: 'Donovon Chen',
+        jersey: 16
+    },
 ]
 
 let schedule = [
-    {
-        name: "Bay Area Sports Tournament - Junior Varsity",
-        organizer: "Bay Area Sports",
-        date: "July 15",
-        time: "9 AM PDT",
-        address: "12500 Campus Drive, Oakland, CA 94619",
-        location: "Oakland, CA",
-        details: "Merritt College, Jamtown",
-        link: "http://www.openball.com/seasonDivision/14676"
-    },
-    {
-        name: "Bay Area Sports Tournament - Varsity",
-        organizer: "Bay Area Sports",
-        date: "July 15",
-        time: "4 PM PDT",
-        address: "12500 Campus Drive, Oakland, CA 94619",
-        location: "Oakland, CA",
-        details: "Merritt College",
-        link: "http://www.openball.com/seasonDivision/14678"
-    },
     {
         name: "Jam On It Tournament",
         organizer: "Las Vegas Grand Finale",
@@ -111,10 +95,10 @@ let albums = [
 ]
 
 let assistantcoaches = [
-    "Alvin Young",
-    "Will Mustain",
     "Rob Kiener",
-    "Olosau Tasi"
+    "Will Mustain",
+    "Olosau Tasi",
+    "Alvin Young",
 ]
 
 let headcoach = "Ali Ravan"
