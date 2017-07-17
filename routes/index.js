@@ -66,6 +66,7 @@ let schedule = [
         name: "Jam On It Tournament",
         organizer: "Las Vegas Grand Finale",
         date: "July 21-23",
+        time: "11:40 AM",
         address: "3150 Paradise Rd, Las Vegas, NV 89109",
         location: "Las Vegas, NV",
         details: "Las Vegas Convention Center - South Hall",
