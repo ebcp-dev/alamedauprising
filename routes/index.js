@@ -70,7 +70,7 @@ let schedule = [
         address: "3150 Paradise Rd, Las Vegas, NV 89109",
         location: "Las Vegas, NV",
         details: "Las Vegas Convention Center - South Hall",
-        link: "http://lasvegasgrandfinale.com/"
+        link: "http://lasvegasgrandfinale.com/2017-grand-finale-schedule/"
     }
 ]
 
