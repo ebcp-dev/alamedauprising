@@ -5,7 +5,7 @@
         <div class="carousel-inner" role="listbox">
 
             <!-- First slide -->
-            <div class="carousel-item active view hm-black-light" style="background-image: url('images/coketourny3.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item active view hm-black-light" style="background-image: url('images/coketourny/coketourny3.jpg'); background-repeat: no-repeat; background-size: cover;">
                 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -27,7 +27,7 @@
             <!--/.First slide-->
 
             <!-- Second slide -->
-            <div class="carousel-item view hm-black-light" style="background-image: url('images/coketourny2.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item view hm-black-light" style="background-image: url('images/coketourny/coketourny2.jpg'); background-repeat: no-repeat; background-size: cover;">
                 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -46,7 +46,7 @@
             <!--/.Second slide -->
 
             <!-- Third slide -->
-            <div class="carousel-item view hm-black-light" style="background-image: url('images/coketourny7.jpg'); background-repeat: no-repeat; background-size: cover;">
+            <div class="carousel-item view hm-black-light" style="background-image: url('images/coketourny/coketourny7.jpg'); background-repeat: no-repeat; background-size: cover;">
                 
                 <!-- Caption -->
                 <div class="full-bg-img flex-center white-text">
@@ -91,12 +91,12 @@
 
                     <!--Card image-->
                     <div class="view hm-cyan-light">
-                        <img src="images/coketourny3.jpg" class="img-fluid" alt="">
+                        <img src="images/coketourny/coketourny3.jpg" class="img-fluid" alt="">
                         <div class="card card-block mask flex-center white-text">
                             <h2 class="h2-responsive">{{schedule.0.date}}</h2>
                             <h3 class="h3-responsive">{{schedule.0.location}}</h3>
                             {{#if schedule.0.time}}
-                            <h3 class="h3-responsive">{{schedule.0.time}}</h3>
+                            <h5 class="text-center">Alameda Uprising VS Salt Lake Hornets<br> {{schedule.0.time}} Court 10</h5>
                             {{/if}}
                         </div>
                     </div>
@@ -108,7 +108,7 @@
                         <h4 class="card-title">Schedule</h4>
                         <!--Text-->
                         <p class="card-text">See our upcoming games.</p>
-                        <a href="#gameschedule" 
+                        <a href="#gameschedule"
                         class="btn btn-info" data-toggle="collapse"
                         aria-expanded="false" aria-controls="gameschedule"
                         >
@@ -120,9 +120,6 @@
                                 <h4 class="card-title">{{name}}</h4>
                                 <p class="card-text">by {{organizer}}</p>
                                 <h4 class="card-title">{{date}}</h4>
-                                {{#if time}}
-                                <p class="card-text">{{time}}</p>
-                                {{/if}}
                                 <p class="card-text">{{address}}</p>
                                 <p class="card-text">{{details}}</p>
                                 <a target="_blank" href="{{link}}" class="btn btn-primary">Click for more details</a>
@@ -144,7 +141,7 @@
 
                     <!--Card image-->
                     <div class="view hm-black-light">
-                        <img src="images/coketourny9.jpg" class="img-fluid" alt="">
+                        <img src="images/coketourny/coketourny9.jpg" class="img-fluid" alt="">
                         <div class="mask flex-center">
                         </div>
                     </div>
@@ -214,12 +211,12 @@
 
                     <!--Card image-->
                     <div class="view hm-black-light">
-                        <img src="images/coketourny8.jpg" class="img-fluid" alt="">
+                        <img src="images/coketourny/coketourny8.jpg" class="img-fluid" alt="">
                         <div class="mask flex-center">
                         </div>
                     </div>
                     <!--/.Card image-->
-
+                
                     <!--Card content-->
                     <div class="card-block">
                         <!--Title-->
@@ -232,8 +229,9 @@
                         >
                         See Gallery
                         </a>
+                        
                         <div class="collapse" id="pictures">
-                            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls">
+                            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-start-slideshow="true" data-filter=":even">
                                 <div class="slides"></div>
                                 <h3 class="title"></h3>
                                 <a class="prev">‹</a>
@@ -242,11 +240,11 @@
                                 <a class="play-pause"></a>
                                 <ol class="indicator"></ol>
                             </div>
-                            <div id="links">
-                                {{#each albums}}
+                            {{#each albums}}
+                            <div id="{{name}}">
                                 <div class="card">
                                     <div class="view overlay hm-white-slight">
-                                        <img class="img-fluid" src="images/coketourny1.jpg" alt="album cover">
+                                        <img class="img-fluid" src="images/{{cover}}.jpg" alt="album cover">
                                     </div>
                                     <div class="card-block">
                                         <h4 class="card-title">{{name}}</h4>
@@ -254,12 +252,13 @@
                                     </div>
                                 </div>
                                 {{#each pics}}
-                                <a class="hide" href="images/{{this}}.jpg">
+                                <a class="hide" href="images/{{this}}.jpg" data-gallery="#blueimp-gallery-{{name}}">
                                     <img src="images/{{this}}.jpg" class="img-fluid" alt="picture">
                                 </a>
                                 {{/each}}
-                                {{/each}}
+                                <br>
                             </div>
+                            {{/each}}
                         </div>
                     </div>
                     <!--/.Card content-->

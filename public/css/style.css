@@ -125,4 +125,11 @@ footer.page-footer {
   display: none;
 }
 
+@media only screen and (max-width: 768px) {
+  .albumcover {
+    max-height: 250px;
+    display: flex;
+  }
+}
+
 /* Gallery */
