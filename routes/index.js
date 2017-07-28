@@ -63,14 +63,14 @@ let roster = [
 
 let schedule = [
     {
-        name: "Jam On It Tournament",
-        organizer: "Las Vegas Grand Finale",
-        date: "July 23",
-        time: "1:20 PM",
-        address: "3150 Paradise Rd, Las Vegas, NV 89109",
-        location: "Las Vegas, NV",
-        details: "Las Vegas Convention Center - South Hall",
-        link: "http://lasvegasgrandfinale.com/2017-grand-finale-schedule/"
+        name: "Bay Area Sports Tournament",
+        organizer: "Bay Area Sports",
+        date: "July 29-30",
+        time: "9 AM PDT",
+        address: "1101 W. Red Line Avenue Alameda, CA 94501",
+        location: "Alameda, CA",
+        details: "Alameda Point Gym",
+        link: "https://www.openball.com/seasonDivision/14715"
     }
 ]
 
