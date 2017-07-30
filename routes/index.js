@@ -65,8 +65,8 @@ let schedule = [
     {
         name: "Bay Area Sports Tournament",
         organizer: "Bay Area Sports",
-        date: "July 29-30",
-        time: "9 AM PDT",
+        date: "July 30",
+        time: "10 AM PDT",
         address: "1101 W. Red Line Avenue Alameda, CA 94501",
         location: "Alameda, CA",
         details: "Alameda Point Gym",
