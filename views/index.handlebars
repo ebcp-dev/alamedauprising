@@ -93,11 +93,10 @@
                     <div class="view hm-cyan-light">
                         <img src="images/coketourny/coketourny3.jpg" class="img-fluid" alt="">
                         <div class="card card-block mask flex-center white-text">
-                            <h2 class="h2-responsive">{{schedule.0.date}}</h2>
-                            <h3 class="h3-responsive">{{schedule.0.location}}</h3>
-                            {{#if schedule.0.time}}
-                            <h5 class="text-center">Alameda Uprising Var VS B.R.A.N.D.E.D<br>
-                            <br> {{schedule.0.time}}<br> Court 4</h5>
+                            <h2 class="h2-responsive">1st Place</h2>
+                            <h3 class="h3-responsive">Bay Area Sports Tournament</h3>
+                            {{#if schedule.0.date}}
+                            <h5 class="text-center">{{schedule.0.date}}<br>
                             {{/if}}
                         </div>
                     </div>
@@ -136,6 +135,43 @@
             <!--First columnn-->
 
             <!--Second columnn-->
+            <div class="col-lg-4">
+                <!--Card-->
+                <div class="card wow fadeIn" data-wow-delay="0.6s" id="gallery">
+
+                    <!--Card image-->
+                    <div class="view hm-black-light">
+                        <img src="images/coketourny/coketourny8.jpg" class="img-fluid" alt="">
+                        <div class="mask flex-center">
+                        </div>
+                    </div>
+                    <!--/.Card image-->
+                
+                    <!--Card content-->
+                    <div class="card-block">
+                        <!--Title-->
+                        <h4 class="card-title">News</h4>
+                        <!--Text-->
+                        <p class="card-text">Check out our announcements.</p>
+                        <a href="#news" 
+                        class="btn btn-info" data-toggle="collapse"
+                        aria-expanded="false" aria-controls="news"
+                        >
+                        News
+                        </a>
+                        <div class="collapse" id="news">
+                            <div class="card-block">
+                                <h4 class="card-title">TBA</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!--/.Card content-->
+                </div>
+                <!--/.Card-->
+            </div>
+            <!--Second columnn-->
+            
+            <!--Third columnn-->
             <div class="col-lg-4">
                 <!--Card-->
                 <div class="card wow fadeIn" data-wow-delay="0.4s" id="roster">
@@ -196,70 +232,6 @@
                                     </li>
                                 </ul>
                             </div>
-                        </div>
-                    </div>
-                    <!--/.Card content-->
-
-                </div>
-                <!--/.Card-->
-            </div>
-            <!--Second columnn-->
-            
-            <!--Third columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
-                <div class="card wow fadeIn" data-wow-delay="0.6s" id="gallery">
-
-                    <!--Card image-->
-                    <div class="view hm-black-light">
-                        <img src="images/coketourny/coketourny8.jpg" class="img-fluid" alt="">
-                        <div class="mask flex-center">
-                        </div>
-                    </div>
-                    <!--/.Card image-->
-                
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Gallery</h4>
-                        <!--Text-->
-                        <p class="card-text">Team pictures.</p>
-                        <a href="#pictures" 
-                        class="btn btn-info" data-toggle="collapse"
-                        aria-expanded="false" aria-controls="pictures"
-                        >
-                        See Gallery
-                        </a>
-                        
-                        <div class="collapse" id="pictures">
-                            <div id="blueimp-gallery" class="blueimp-gallery blueimp-gallery-controls" data-start-slideshow="true" data-filter=":even">
-                                <div class="slides"></div>
-                                <h3 class="title"></h3>
-                                <a class="prev">‹</a>
-                                <a class="next">›</a>
-                                <a class="close">×</a>
-                                <a class="play-pause"></a>
-                                <ol class="indicator"></ol>
-                            </div>
-                            {{#each albums}}
-                            <div id="{{name}}">
-                                <div class="card">
-                                    <div class="view overlay hm-white-slight">
-                                        <img class="img-fluid" src="images/{{cover}}.jpg" alt="album cover">
-                                    </div>
-                                    <div class="card-block">
-                                        <h4 class="card-title">{{name}}</h4>
-                                        <p class="card-text">{{location}}<br>{{date}}</p>
-                                    </div>
-                                </div>
-                                {{#each pics}}
-                                <a class="hide" href="images/{{this}}.jpg" data-gallery="#blueimp-gallery-{{name}}">
-                                    <img src="images/{{this}}.jpg" class="img-fluid" alt="picture">
-                                </a>
-                                {{/each}}
-                                <br>
-                            </div>
-                            {{/each}}
                         </div>
                     </div>
                     <!--/.Card content-->

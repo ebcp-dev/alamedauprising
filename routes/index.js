@@ -74,43 +74,6 @@ let schedule = [
     }
 ]
 
-let albums = [
-    {
-        name: "Coca Cola Nationals",
-        location: "Los Angeles, CA",
-        date: "June 24-25, 2017",
-        cover: "coketourny/coketourny1",
-        pics: [
-            "coketourny/coketourny1",
-            "coketourny/coketourny2",
-            "coketourny/coketourny3",
-            "coketourny/coketourny4",
-            "coketourny/coketourny5",
-            "coketourny/coketourny6",
-            "coketourny/coketourny7",
-            "coketourny/coketourny8",
-            "coketourny/coketourny9",
-            "coketourny/coketourny10",
-            "coketourny/coketourny11",
-        ]
-    },
-    {
-        name: "Bay Area Sports Tournament",
-        location: "Oakland, CA",
-        date: "July 15, 2017",
-        cover: "bastourny/bastourny1",
-        pics: [
-            "bastourny/bastourny1",
-            "bastourny/bastourny2",
-            "bastourny/bastourny3",
-            "bastourny/bastourny4",
-            "bastourny/bastourny5",
-            "bastourny/bastourny6",
-            "bastourny/bastourny7",
-        ]
-    },
-]
-
 let assistantcoaches = [
     "Rob Kiener",
     "Will Mustain",
@@ -124,7 +87,7 @@ let generalmanager = "Mehdi Ravan"
 
 //get homepage
 router.get('/', function(req, res) {
-    res.render('index', {roster, albums, assistantcoaches, headcoach, generalmanager, schedule})
+    res.render('index', {roster, assistantcoaches, headcoach, generalmanager, schedule})
 })
 
 module.exports = router
