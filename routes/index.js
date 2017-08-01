@@ -81,7 +81,7 @@ let assistantcoaches = [
     "Alvin Young",
 ]
 
-let headcoach = "Ali Ravan"
+let headcoach = "Ali Ravan Jr"
 
 let generalmanager = "Mehdi Ravan"
 
