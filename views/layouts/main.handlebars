@@ -5,23 +5,17 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         
-        <!-- Ekko Lightbox -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.2.0/ekko-lightbox.css">
-
         <!-- Font Awesome -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.0/css/font-awesome.min.css">
 
         <!-- Bootstrap core CSS -->
-        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="/css/bootstrap.min.css" rel="stylesheet">
 
         <!-- Material Design Bootstrap -->
-        <link href="css/mdb.min.css" rel="stylesheet">
+        <link href="/css/mdb.min.css" rel="stylesheet">
 
         <!-- Font Awesome -->
         <link rel="icon" type="image/jpg" href="images/aulogo.jpg">
-
-        <!-- blueimp -->
-        <link rel="stylesheet" href="css/blueimp-gallery.min.css">
 
         <title>Alameda Uprising</title>
     </head>
@@ -31,12 +25,26 @@
                 <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav1" aria-controls="navbarNav1" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand" href="#home">
+                {{#if user}}
+                <a class="navbar-brand" href="/ausite_admin/dashboard">
+                    <strong>Alameda Uprising Admin</strong>
+                </a>
+                {{else}}
+                <a class="navbar-brand" href="/">
                     <strong>Alameda Uprising</strong>
                 </a>
+                {{/if}}
                 <div class="collapse navbar-collapse" id="navbarNav1">
                     <ul class="navbar-nav mr-auto smooth-scroll">
-                        <li class="nav-item active">
+                        {{#if user}}
+                        <li class="nav-item">
+                            <a href="/ausite_admin/dashboard" class="nav-link">Dashboard <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/ausite_admin/logout" class="nav-link">Logout <span class="sr-only">(current)</span></a>
+                        </li>
+                        {{else}}
+                        <li class="nav-item">
                             <a href="#home" class="nav-link">Home <span class="sr-only">(current)</span></a>
                         </li>
                         <li class="nav-item">
@@ -51,13 +59,18 @@
                         <li class="nav-item">
                             <a href="#contact" class="nav-link">Contact</a>
                         </li>
+                        {{/if}}
                     </ul>
                 </div>
             </div>
         </nav>
+        
         {{{body}}}
+
         <!--Footer-->
         <footer class="page-footer center-on-small-only">
+
+            <hr>
 
             <!--Footer Links-->
             <div class="container-fluid">
@@ -100,18 +113,17 @@
         </footer>
         <!--/.Footer-->
         
-        <!-- Blueimp Lightbox -->
+        <!-- jQuery -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-        <script src="js/jquery.blueimp-gallery.min.js"></script>
         <!-- Bootstrap tooltips -->
-        <script type="text/javascript" src="js/tether.min.js"></script>
+        <script type="text/javascript" src="/js/tether.min.js"></script>
         <!-- Bootstrap core JavaScript -->
-        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/js/bootstrap.min.js"></script>
         <!-- MDB core JavaScript -->
-        <script type="text/javascript" src="js/mdb.min.js"></script>
+        <script type="text/javascript" src="/js/mdb.min.js"></script>
 
-        <!-- Gallery lightbox -->
-        <script src="js/js/lightbox.js"></script>
+        <!-- Gallery lightbox 
+        <script src="js/js/lightbox.js"></script>-->
 
         <link href="/css/style.css" rel="stylesheet" type="text/css">
   </body>

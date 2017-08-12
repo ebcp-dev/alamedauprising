@@ -3,6 +3,32 @@ body {
   height: 100%;
   background-color: #FFF;
 }
+
+ main {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+  background-color: #a6a6a6;
+}
+
+.admin-jumbo {
+  margin-top: 50px;
+}
+
+.extra-margins {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.jumbotron {
+  text-align: center;
+}
+
+/* Index content */
+
+.content {
+  margin-bottom: 20px;
+}
+
 /* Navigation*/
         
 .navbar {
@@ -20,6 +46,7 @@ body {
         
 footer.page-footer {
   background-color: #FF5CE7;
+  margin: 0;
 }
 
 /*solid navbar on mobile      
@@ -86,14 +113,6 @@ footer.page-footer {
 
 /*Buttons*/
 
-/*Roster*/
-
-.badge-pill {
-  background-color: #00E0FF;
-}
-
-/*Roster*/
-
 /* Scrollbar */
 
 ::-webkit-scrollbar {
@@ -111,25 +130,23 @@ footer.page-footer {
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #00E0FF;
+    background: #00FDFF;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-   background: #00E0FF;
+   background: #00FDFF;
 }
 
-/* Gallery */
+/* Sign-in form */
 
-.hide {
-  display: none;
+.signin-page {
+  margin-top: 80px;
+  margin-bottom: 80px;
 }
 
-@media only screen and (max-width: 768px) {
-  .albumcover {
-    max-height: 250px;
-    display: flex;
-  }
-}
+/* Register form */
 
-/* Gallery */
+.page-header {
+  padding-top: 100px;
+}

@@ -1,0 +1,320 @@
+<main>
+    <!--Main layout-->
+    <div class="container">
+        <!--First row-->
+        <div class="row wow fadeIn admin-jumbo" data-wow-delay="0.2s">
+            <div class="col-md-12">
+                <div class="jumbotron">
+                    <h2 class="h2-responsive">Admin Dashboard</h2>
+                    <br>
+                    <hr>
+                    <p>Manage Roster, Staff, Schedule (In progress), Articles (In progress)</p>
+                    <a target="_blank" href="/" class="btn btn-unique btn-ptc">Visit website</a>
+                    <a href="/ausite_admin/register_admin" class="btn btn-unique btn-ptc">Create new admin</a>
+                </div>
+            </div>
+        </div>
+        <!--/.First row-->
+
+        <hr class="extra-margins">
+
+        <!--Second row-->
+        <div class="row">
+            <!--First columnn-->
+            <div class="col-lg-6" id="admincard">
+                <div class="jumbotron">
+                    <h4 class="card-title">Admin: {{user.username}}</h4>
+                    <hr>
+                    <p class="card-text">Name: {{user.name}}</p>
+                    <p class="card-text">Email: {{user.contact_info.email}}</p>
+                    <a href="#credentialsform" data-toggle="collapse" class="btn btn-unique btn-ptc" 
+                    aria-expanded="false" aria-controls="credentialsform">
+                        Edit Credentials
+                    </a>
+                    <!-- edit credentials form -->
+                    <div class="collapse" id="credentialsform">
+                        <form method="post" action="/ausite_admin/update_profile">
+                            <div class="md-form">
+                                <input type="text" name="name" class="form-control"
+                                 placeholder="{{user.name}}" value="{{user.name}}">
+                            </div>
+                            <div class="md-form">
+                                <input type="text" name="username" class="form-control"
+                                 placeholder="{{user.username}}" value="{{user.username}}">
+                            </div>
+                            <div class="md-form">
+                                <input type="text" name="email" class="form-control"
+                                 placeholder="{{user.contact_info.email}}" value="{{user.contact_info.email}}">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-cyan">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--First columnn-->
+
+            <!--Second columnn-->
+            <div class="col-lg-6" id="articles">
+                <div class="jumbotron">
+                    <h4 class="card-title">Articles (In progress)</h4>
+                    <hr>
+                    <div class="card-block">
+                        <h4 class="card-title">Example</h4>
+                        <p class="card-text">by Author</p>
+                        <h4 class="card-title">8/12/2017</h4>
+                        <a href="#articleid" data-toggle="collapse" class="btn btn-unique btn-ptc" 
+                            aria-expanded="false" aria-controls="articleid">
+                            Edit article
+                        </a>
+                        <a href="#" class="btn btn-primary">See live article</a>
+                        <div class="container-fluid">
+                            <div class="collapse" id="articleid">
+                                <form method="post" action="/articles/edit_article">
+                                    <div class="md-form">
+                                        <input type="text" name="title" placeholder="About"
+                                        value="About" class="form-control">
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="text" name="author" placeholder="Author"
+                                        value="Author" class="form-control">
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="date" name="published" placeholder="September 28"
+                                        value="08/12/2017" class="form-control">
+                                    </div>
+                                    <div class="md-form">
+                                        <textarea type="text" name="text" class="md-textarea"></textarea>
+                                    </div>
+                                    <input style="display: none;" value="{{_id}}" name="articleid">
+                                    <div class="text-center">
+                                        <button class="btn btn-cyan">Submit</button>
+                                    </div>
+                                </form>
+                                <form method="post" action="/articles/edit_article">
+                                    <input style="display: none;" value="{{_id}}" name="objid">
+                                    <div class="text-center">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <hr>
+                        {{#each articlelist}}
+                        <h4 class="card-title">{{title}}</h4>
+                        <p class="card-text">by {{author}}</p>
+                        <h4 class="card-title">{{published}}</h4>
+                        <a href="#" class="btn btn-unique btn-ptc">Edit Article</a>
+                        <a href="#" class="btn btn-primary">See live article</a>
+                        <hr>
+                        {{/each}}
+                    </div>
+                    <a href="#newarticle" data-toggle="collapse" class="btn btn-unique btn-ptc" 
+                    aria-expanded="false" aria-controls="newarticle">
+                        New article
+                    </a>
+                    <!-- add new article form -->
+                    <div class="collapse" id="newarticle">
+                        <form method="post" action="/articles/new_article">
+                            <div class="md-form">
+                                <input type="text" name="title" class="form-control"
+                                 placeholder="Title">
+                            </div>
+                            <div class="md-form">
+                                <input type="text" name="author" class="form-control"
+                                 placeholder="Author">
+                            </div>
+                            <div class="md-form">
+                                <input type="date" name="date" class="form-control">
+                            </div>
+                            <div class="md-form">
+                                <textarea type="text" name="text" class="md-textarea"></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-cyan">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Second columnn-->
+        <!-- Third row -->
+        </div>
+        <div class="row">
+            <!--Third columnn-->
+            <div class="col-lg-6" id="schedule">
+                <div class="jumbotron">
+                    <h4 class="card-title">Schedule (In progress)</h4>
+                    <hr>
+                    <div class="card-block">
+                        <h4 class="card-title">Example Tournament</h4>
+                        <p class="card-text">by Organizer</p>
+                        <h4 class="card-title">September 28</h4>
+                        <p class="card-text">123 Example Drive</p>
+                        <p class="card-text">Example court</p>
+                        <a href="#" class="btn btn-unique btn-ptc">Edit Details</a>
+                        <a href="#" class="btn btn-primary">Click for more details</a>
+                        <hr>
+                        {{#each schedule}}
+                        <h4 class="card-title">{{name}}</h4>
+                        <p class="card-text">by {{organizer}}</p>
+                        <h4 class="card-title">{{date}}</h4>
+                        <p class="card-text">{{address}}</p>
+                        <p class="card-text">{{details}}</p>
+                        <a href="#" class="btn btn-unique btn-ptc">Edit Details</a>
+                        <a target="_blank" href="{{link}}" class="btn btn-primary">Click for more details</a>
+                        <hr>
+                        {{/each}}
+                    </div>
+                    <a href="#" class="btn btn-unique btn-ptc">Edit Schedule</a>
+                </div>
+            </div>
+            <!--Third columnn-->
+
+            <!--Fourth columnn-->
+            <div class="col-lg-6" id="roster">
+                <div class="jumbotron">
+                    <h4 class="card-title">Roster</h4>
+                    <hr>
+                    <ul class="list-group">
+                        {{#each rosterlist}}
+                        <li class="list-group-item justify-content-between">
+                            {{name}}
+                            <span class="badge badge-primary badge-pill">{{jersey}}</span>
+                            <a href="#edit{{_id}}" data-toggle="collapse" class="btn btn-unique btn-ptc" 
+                                aria-expanded="false" aria-controls="edit{{_id}}">
+                                Edit Player
+                            </a>
+                        </li>
+                        <div class="container-fluid">
+                            <div class="collapse" id="edit{{_id}}">
+                                <form method="post" action="/roster/edit_player">
+                                    <div class="md-form">
+                                        <input type="text" name="playername" placeholder="{{name}}"
+                                        value="{{name}}" class="form-control">
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="number" name="jersey" placeholder="{{jersey}}"
+                                        value="{{jersey}}" class="form-control">
+                                    </div>
+                                    <input style="display: none;" value="{{_id}}" name="objid">
+                                    <div class="text-center">
+                                        <button class="btn btn-cyan">Submit</button>
+                                    </div>
+                                </form>
+                                <form method="post" action="/roster/delete_player">
+                                    <input style="display: none;" value="{{_id}}" name="objid">
+                                    <div class="text-center">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </ul>
+                    <hr>
+                    <a href="#editrosterform" data-toggle="collapse" class="btn btn-unique btn-ptc" 
+                    aria-expanded="false" aria-controls="editrosterform">
+                        Add player
+                    </a>
+                    <!-- edit roster form -->
+                    <div class="collapse" id="editrosterform">
+                        <form method="post" action="/roster/add_player">
+                            <div class="md-form">
+                                <input type="text" name="playername" placeholder="Player name"
+                                 class="form-control">
+                            </div>
+                            <div class="md-form">
+                                <input type="number" name="jersey" placeholder="Jersey number"
+                                 class="form-control">
+                            </div>
+                            <div class="text-center">
+                                <button class="btn btn-cyan">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                    <hr>
+
+                    <!-- Staff -->
+                    <h4 class="card-title">Staff</h4>
+                    <hr>
+                    <ul class="list-group">
+                        {{#each stafflist}}
+                        <li class="list-group-item justify-content-between">
+                            {{position}}: {{name}}
+                            <a href="#edit{{_id}}" data-toggle="collapse" class="btn btn-unique btn-ptc" 
+                            aria-expanded="false" aria-controls="edit{{_id}}">
+                                Edit Staff
+                            </a>
+                        </li>
+                        <div class="container-fluid">
+                            <div class="collapse" id="edit{{_id}}">
+                                <form method="post" action="/roster/edit_staff">
+                                    <div class="md-form">
+                                        <input type="text" name="staffname" placeholder="{{name}}"
+                                        value="{{name}}" class="form-control">
+                                    </div>
+                                    <div class="md-form">
+                                        <input type="text" name="position" placeholder="{{position}}"
+                                        value="{{position}}" class="form-control">
+                                    </div>
+                                    <input style="display: none;" value="{{_id}}" name="staffid">
+                                    <div class="text-center">
+                                        <button class="btn btn-cyan">Submit</button>
+                                    </div>
+                                </form>
+                                <form method="post" action="/roster/delete_staff">
+                                    <input style="display: none;" value="{{_id}}" name="staffid">
+                                    <div class="text-center">
+                                        <button class="btn btn-danger">Delete</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        {{/each}}
+                    </ul>
+                    <hr>
+                    <a href="#addstaff" data-toggle="collapse" class="btn btn-unique btn-ptc" 
+                    aria-expanded="false" aria-controls="addstaff">
+                        Add staff
+                    </a>
+                    <!-- edit roster form -->
+                    <div class="collapse" id="addstaff">
+                        <form method="post" action="/roster/add_staff">
+                            <div class="md-form">
+                                <input type="text" name="staffname" placeholder="Staff name"
+                                 class="form-control">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="position" 
+                                    value="Head Coach"> Head Coach
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="position" 
+                                    value="Assistant Coach"> Assistant Coach
+                                </label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label">
+                                    <input class="form-check-input" type="radio" name="position" 
+                                    value="General Manager"> General Manager
+                                </label>
+                            </div>
+                            <input style="display: none;" value="{{_id}}" name="staffid">
+                            <div class="text-center">
+                                <button class="btn btn-cyan">Add</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <!--Fourth columnn-->
+        </div>
+        <!--/.Second row-->
+    </div>
+    <!--/.Main layout-->
+</main>

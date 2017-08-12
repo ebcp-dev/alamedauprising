@@ -1,0 +1,46 @@
+<main>
+    <h2 class="page-header register-form">Create Admin</h2>
+
+    <!-- Register form -->
+    <div class="container-fluid">
+        <div class="jumbotron">
+            <form method="post" action="/ausite_admin/register_admin">
+
+                <div class="md-form">
+                    <input type="text" name="name" class="form-control"
+                    placeholder="Your name">
+                </div>
+                <div class="md-form">
+                    <input type="text" name="username" class="form-control"
+                    placeholder="Username">
+                </div>
+                <div class="md-form">
+                    <input type="text" name="email" class="form-control"
+                    placeholder="Your email">
+                </div>
+                <div class="md-form">
+                    <input type="password" name="password" class="form-control"
+                    placeholder="Your password">
+                </div>
+                <div class="md-form">
+                    <input type="password" name="password2" class="form-control"
+                    placeholder="Confirm password">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-deep-orange">Sign up</button>
+                </div>
+
+            </form>
+        </div>
+        
+    {{#if errors}}
+        {{#each errors}}
+            <div class="alert alert-danger">
+                <i class="icon-remove-sign icon-large"></i> {{msg}}
+                <a href="#close" class="icon-remove"></a>
+            </div>
+        {{/each}}
+    {{/if}}
+    </div>
+    <!-- Register form -->
+</main>

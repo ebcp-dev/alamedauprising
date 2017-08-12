@@ -1,67 +1,32 @@
 //homepage
 const express = require('express')
 const router = express.Router()
+const mongoose = require('mongoose')
+const AsyncPolling = require('async-polling')
+const helpers = require('handlebars-helpers')
+const comparison = helpers.comparison()
 
-let roster = [
-    {
-        name: 'Quentel Reed',
-        jersey: 00
-    },
-    {
-        name: 'Cyrus Lavassani',
-        jersey: 9
-    },
-    {
-        name: 'Landis Green',
-        jersey: 1
-    },
-    {
-        name: 'Dylan Ravan',
-        jersey: 0
-    },
-    {
-        name: 'William Mustain',
-        jersey: 5
-    },
-    {
-        name: 'Nick Saikley',
-        jersey: 6
-    },
-    {
-        name: 'Desmond Ho',
-        jersey: 2
-    },
-    {
-        name: 'Kobe Kiener',
-        jersey: 7
-    },
-    {
-        name: 'Lamonte Mustain',
-        jersey: 11
-    },
-    {
-        name: 'Robert Holt',
-        jersey: 3
-    },
-    {
-        name: 'Darius Hayden',
-        jersey: 22
-    },
-    {
-        name: 'Rodrigo De Souza',
-        jersey: 24
-    },
-    {
-        name: 'Elijah Twaggbe',
-        jersey: 8
-    },
-    {
-        name: 'Donovon Chen',
-        jersey: 16
-    },
-]
+const Player = require('../models/player')
+const Staff = require('../models/staff')
 
-let schedule = [
+var roster
+var staff
+AsyncPolling(function (end) {
+    // Do whatever you want. 
+    Player.find({}, 'name jersey', (err, docs) => {
+        if (err) throw err
+        roster = docs
+    })
+    Staff.find({}, (err, docs) => {
+        if (err) throw err
+        staff = docs
+    })
+    // Then notify the polling when your job is done:
+    end();
+    // This will schedule the next call. 
+}, 3000).run();
+
+var schedule = [
     {
         name: "Bay Area Sports Tournament",
         organizer: "Bay Area Sports",
@@ -74,20 +39,20 @@ let schedule = [
     }
 ]
 
-let assistantcoaches = [
+var assistantcoaches = [
     "Rob Kiener",
     "Will Mustain",
     "Olosau Tasi",
     "Alvin Young",
 ]
 
-let headcoach = "Ali Ravan Jr"
+var headcoach = "Ali Ravan Jr"
 
-let generalmanager = "Mehdi Ravan"
+var generalmanager = "Mehdi Ravan"
 
 //get homepage
 router.get('/', function(req, res) {
-    res.render('index', {roster, assistantcoaches, headcoach, generalmanager, schedule})
+    res.render('index', {rosterlist: roster, stafflist: staff, assistantcoaches, headcoach, generalmanager, schedule, comparison})
 })
 
 module.exports = router

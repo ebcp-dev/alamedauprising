@@ -82,7 +82,7 @@
     <br>
 
 <!--Content-->
-    <div class="container">
+    <div class="container content">
         <div class="row">
             <!--First columnn-->
             <div class="col-lg-4">
@@ -200,36 +200,45 @@
                             <div class="card-block texter-center">
                                 <h3 class="h3-responsive text-center">PLAYERS</h3>
                                 <ul class="list-group">
-                                    {{#each roster}}
+                                    {{#each rosterlist}}
                                     <li class="list-group-item justify-content-between">
                                         {{name}}
-                                        <span class="badge badge-primary badge-pill">{{jersey}}</span>
+                                        <span class="badge badge-info">{{jersey}}</span>
                                     </li>
                                     {{/each}}
                                 </ul>
                                 <br>
                                 <h3 class="h3-responsive text-center">HEAD COACH</h3>
                                 <ul class="list-group">
+                                {{#each stafflist}}
+                                    {{#eq position 'Head Coach'}}
                                     <li class="list-group-item justify-content-between">
-                                        {{headcoach}}
+                                        {{name}}
                                     </li>
+                                    {{/eq}}
+                                {{/each}}
                                 </ul>
-                                <p></p>
                                 <br>
                                 <h3 class="h3-responsive text-center">ASSISTANT COACHES</h3>
                                 <ul class="list-group">
-                                    {{#each assistantcoaches}}
+                                {{#each stafflist}}
+                                    {{#eq position 'Assistant Coach'}}
                                     <li class="list-group-item justify-content-between">
-                                        {{this}}
+                                        {{name}}
                                     </li>
-                                    {{/each}}
+                                    {{/eq}}
+                                {{/each}}
                                 </ul>
                                 <br>
                                 <h3 class="h3-responsive text-center">GENERAL MANAGER</h3>
                                 <ul class="list-group">
+                                {{#each stafflist}}
+                                    {{#eq position 'General Manager'}}
                                     <li class="list-group-item justify-content-between">
-                                        {{generalmanager}}
+                                        {{name}}
                                     </li>
+                                    {{/eq}}
+                                {{/each}}
                                 </ul>
                             </div>
                         </div>
