@@ -21,6 +21,7 @@ const port = process.env.PORT ? process.env.PORT : 3000
 const index = require('./routes/index')
 const admin = require('./routes/admin')
 const roster = require('./routes/roster')
+const articles = require('./routes/articles')
 
 app.set('views', path.join(__dirname, 'views'))
 //default layout file will be called 'main'
@@ -74,6 +75,7 @@ app.use((req, res, next) => {
 app.use('/', index)
 app.use('/ausite_admin', admin)
 app.use('/roster', roster)
+app.use('/articles', articles)
 
 app.listen(port || 5000, () => {
     console.log(`Server started on port ${port}.`)

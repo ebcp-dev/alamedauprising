@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const PlayerSchema = mongoose.Schema({
     name: String,
-    jersey: Number
+    jersey: String
 })
 
 var Roster = module.exports = mongoose.model('Player', PlayerSchema)

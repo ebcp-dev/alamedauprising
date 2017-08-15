@@ -28,31 +28,20 @@ AsyncPolling(function (end) {
 
 var schedule = [
     {
-        name: "Bay Area Sports Tournament",
+        name: "Tournament of Champions",
         organizer: "Bay Area Sports",
-        date: "July 30",
-        time: "10 AM PDT",
-        address: "1101 W. Red Line Avenue Alameda, CA 94501",
-        location: "Alameda, CA",
-        details: "Alameda Point Gym",
-        link: "https://www.openball.com/seasonDivision/14715"
+        date: "August 26-27",
+        time: "",
+        address: "31 4th Street Oakland, CA 94607",
+        location: "Oakland, CA",
+        details: "Jamtown, City College of San Francisco",
+        link: "http://bayareasports.org/"
     }
 ]
 
-var assistantcoaches = [
-    "Rob Kiener",
-    "Will Mustain",
-    "Olosau Tasi",
-    "Alvin Young",
-]
-
-var headcoach = "Ali Ravan Jr"
-
-var generalmanager = "Mehdi Ravan"
-
 //get homepage
 router.get('/', function(req, res) {
-    res.render('index', {rosterlist: roster, stafflist: staff, assistantcoaches, headcoach, generalmanager, schedule, comparison})
+    res.render('index', {rosterlist: roster, stafflist: staff, schedule})
 })
 
 module.exports = router

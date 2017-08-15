@@ -29,6 +29,7 @@
     "mongoose": "^4.11.6",
     "passport": "^0.3.2",
     "passport-http": "^0.3.0",
-    "passport-local": "^1.0.0"
+    "passport-local": "^1.0.0",
+    "require-reload": "^0.2.2"
   }
 }

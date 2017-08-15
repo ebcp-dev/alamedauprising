@@ -6,13 +6,17 @@ const LocalStrategy = require('passport-local').Strategy
 const expressValidator = require('express-validator')
 const mongoose = require('mongoose')
 const AsyncPolling = require('async-polling')
+const helpers = require('handlebars-helpers')
+const comparison = helpers.comparison()
 
 const Admin = require('../models/admin')
 const Player = require('../models/player')
 const Staff = require('../models/staff')
+const Article = require('../models/article')
 
 var roster
 var staff
+var articles
 AsyncPolling(function (end) {
     // Do whatever you want. 
     Player.find({}, (err, docs) => {
@@ -22,6 +26,10 @@ AsyncPolling(function (end) {
     Staff.find({}, (err, docs) => {
         if (err) throw err
         staff = docs
+    })
+    Article.find({}, (err, docs) => {
+        if (err) throw err
+        articles = docs
     })
     // Then notify the polling when your job is done:
     end();
@@ -35,7 +43,7 @@ router.get('/', function(req, res) {
 
 //get admin dashboard
 router.get('/dashboard', ensureAuthenticated, function(req, res) {
-    res.render('admin_dash', {rosterlist: roster, stafflist: staff})
+    res.render('admin_dash', {rosterlist: roster, stafflist: staff, articlelist: articles})
 })
 
 //get register view

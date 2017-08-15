@@ -2,6 +2,15 @@
     <!--Main layout-->
     <div class="container">
         <!--First row-->
+        {{#if errors}}
+        <hr>
+            {{#each errors}}
+                <div class="alert alert-danger">
+                    <i class="icon-remove-sign icon-large"></i> {{msg}}
+                    <a href="#close" class="icon-remove"></a>
+                </div>
+            {{/each}}
+        {{/if}}
         <div class="row wow fadeIn admin-jumbo" data-wow-delay="0.2s">
             <div class="col-md-12">
                 <div class="jumbotron">
@@ -58,55 +67,48 @@
             <!--Second columnn-->
             <div class="col-lg-6" id="articles">
                 <div class="jumbotron">
-                    <h4 class="card-title">Articles (In progress)</h4>
+                    <h4 class="card-title">Articles</h4>
                     <hr>
                     <div class="card-block">
-                        <h4 class="card-title">Example</h4>
-                        <p class="card-text">by Author</p>
-                        <h4 class="card-title">8/12/2017</h4>
-                        <a href="#articleid" data-toggle="collapse" class="btn btn-unique btn-ptc" 
-                            aria-expanded="false" aria-controls="articleid">
+                        {{#each articlelist}}
+                        <h4 class="card-title">{{title}}</h4>
+                        <p class="card-text">by {{author}}</p>
+                        <a href="#articleid{{_id}}" data-toggle="collapse" class="btn btn-unique btn-ptc" 
+                            aria-expanded="false" aria-controls="articleid{{_id}}">
                             Edit article
                         </a>
                         <a href="#" class="btn btn-primary">See live article</a>
                         <div class="container-fluid">
-                            <div class="collapse" id="articleid">
+                            <div class="collapse" id="articleid{{_id}}">
                                 <form method="post" action="/articles/edit_article">
                                     <div class="md-form">
-                                        <input type="text" name="title" placeholder="About"
-                                        value="About" class="form-control">
+                                        <input type="text" name="title" placeholder="{{title}}"
+                                        value="{{title}}" class="form-control">
                                     </div>
                                     <div class="md-form">
-                                        <input type="text" name="author" placeholder="Author"
-                                        value="Author" class="form-control">
+                                        <input type="text" name="author" placeholder="{{author}}"
+                                        value="{{author}}" class="form-control">
                                     </div>
                                     <div class="md-form">
-                                        <input type="date" name="published" placeholder="September 28"
-                                        value="08/12/2017" class="form-control">
+                                        <p>Last edited:</p>
+                                        <p>{{date}}</p>
                                     </div>
                                     <div class="md-form">
-                                        <textarea type="text" name="text" class="md-textarea"></textarea>
+                                        <textarea type="text" name="text" class="form-control">{{body}}</textarea>
                                     </div>
                                     <input style="display: none;" value="{{_id}}" name="articleid">
                                     <div class="text-center">
                                         <button class="btn btn-cyan">Submit</button>
                                     </div>
                                 </form>
-                                <form method="post" action="/articles/edit_article">
-                                    <input style="display: none;" value="{{_id}}" name="objid">
+                                <form method="post" action="/articles/delete_article">
+                                    <input style="display: none;" value="{{_id}}" name="articleid">
                                     <div class="text-center">
                                         <button class="btn btn-danger">Delete</button>
                                     </div>
                                 </form>
                             </div>
                         </div>
-                        <hr>
-                        {{#each articlelist}}
-                        <h4 class="card-title">{{title}}</h4>
-                        <p class="card-text">by {{author}}</p>
-                        <h4 class="card-title">{{published}}</h4>
-                        <a href="#" class="btn btn-unique btn-ptc">Edit Article</a>
-                        <a href="#" class="btn btn-primary">See live article</a>
                         <hr>
                         {{/each}}
                     </div>
@@ -125,11 +127,8 @@
                                 <input type="text" name="author" class="form-control"
                                  placeholder="Author">
                             </div>
-                            <div class="md-form">
-                                <input type="date" name="date" class="form-control">
-                            </div>
-                            <div class="md-form">
-                                <textarea type="text" name="text" class="md-textarea"></textarea>
+                            <div class="form-group">
+                                <textarea placeholder="Type here" type="text" name="text" class="form-control"></textarea>
                             </div>
                             <div class="text-center">
                                 <button class="btn btn-cyan">Submit</button>
@@ -179,9 +178,11 @@
                     <hr>
                     <ul class="list-group">
                         {{#each rosterlist}}
-                        <li class="list-group-item justify-content-between">
-                            {{name}}
-                            <span class="badge badge-primary badge-pill">{{jersey}}</span>
+                        <li class="list-group-item justify-content-between align-middle">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Name: {{name}}</h5>
+                            </div>
+                            <p class="mb-1">Jersey: {{jersey}}</p>
                             <a href="#edit{{_id}}" data-toggle="collapse" class="btn btn-unique btn-ptc" 
                                 aria-expanded="false" aria-controls="edit{{_id}}">
                                 Edit Player
@@ -195,7 +196,7 @@
                                         value="{{name}}" class="form-control">
                                     </div>
                                     <div class="md-form">
-                                        <input type="number" name="jersey" placeholder="{{jersey}}"
+                                        <input type="text" name="jersey" placeholder="{{jersey}}"
                                         value="{{jersey}}" class="form-control">
                                     </div>
                                     <input style="display: none;" value="{{_id}}" name="objid">
@@ -226,7 +227,7 @@
                                  class="form-control">
                             </div>
                             <div class="md-form">
-                                <input type="number" name="jersey" placeholder="Jersey number"
+                                <input type="text" name="jersey" placeholder="Jersey number"
                                  class="form-control">
                             </div>
                             <div class="text-center">
@@ -242,7 +243,10 @@
                     <ul class="list-group">
                         {{#each stafflist}}
                         <li class="list-group-item justify-content-between">
-                            {{position}}: {{name}}
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">Name: {{name}}</h5>
+                            </div>
+                            <p class="mb-1">Role: {{position}}</p>
                             <a href="#edit{{_id}}" data-toggle="collapse" class="btn btn-unique btn-ptc" 
                             aria-expanded="false" aria-controls="edit{{_id}}">
                                 Edit Staff
@@ -255,9 +259,38 @@
                                         <input type="text" name="staffname" placeholder="{{name}}"
                                         value="{{name}}" class="form-control">
                                     </div>
-                                    <div class="md-form">
-                                        <input type="text" name="position" placeholder="{{position}}"
-                                        value="{{position}}" class="form-control">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            {{#eq position 'Head Coach'}}
+                                            <input checked class="form-check-input" type="radio" name="position" 
+                                            value="Head Coach"> Head Coach
+                                            {{else}}
+                                            <input class="form-check-input" type="radio" name="position" 
+                                            value="Head Coach"> Head Coach
+                                            {{/eq}}
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            {{#eq position 'Assistant Coach'}}
+                                            <input checked class="form-check-input" type="radio" name="position" 
+                                            value="Assistant Coach"> Assistant Coach
+                                            {{else}}
+                                            <input class="form-check-input" type="radio" name="position" 
+                                            value="Assistant Coach"> Assistant Coach
+                                            {{/eq}}
+                                        </label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">
+                                            {{#eq position 'General Manager'}}
+                                            <input checked class="form-check-input" type="radio" name="position" 
+                                            value="General Manager"> General Manager
+                                            {{else}}
+                                            <input class="form-check-input" type="radio" name="position" 
+                                            value="General Manager"> General Manager
+                                            {{/eq}}
+                                        </label>
                                     </div>
                                     <input style="display: none;" value="{{_id}}" name="staffid">
                                     <div class="text-center">

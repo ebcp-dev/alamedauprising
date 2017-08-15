@@ -150,3 +150,10 @@ footer.page-footer {
 .page-header {
   padding-top: 100px;
 }
+
+/* Textarea */
+
+textarea {
+  width: 200px;
+  height: 300px;
+}
