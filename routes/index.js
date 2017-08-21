@@ -28,17 +28,6 @@ AsyncPolling(function (end) {
 
 var schedule = [
     {
-        name: "Bay Area Sports Tournament",
-        organizer: "Bay Area Sports",
-        date: "August 19-20",
-        time: "9 AM PDT",
-        address: "31 4th Street Oakland, CA 94607",
-        location: "Oakland, CA",
-        details: "Jamtown",
-        link: "http://www.openball.com/seasonTeam/960958",
-        link2: "http://www.openball.com/seasonTeam/960941"
-    },
-    {
         name: "Tournament of Champions",
         organizer: "Bay Area Sports",
         date: "August 26-27",

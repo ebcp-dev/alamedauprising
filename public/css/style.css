@@ -63,17 +63,20 @@ footer.page-footer {
   transition: background .5s ease-in-out, padding .5s ease-in-out;
 }
 /* Carousel*/
+.carousel-sched {
+  height: 20%;
+}
 
 .pinktext {
   color: #FF5CE7;
 }
 
-.carousel {
+.carousel-main {
   height: 50%;
 }
         
 @media (max-width: 776px) {
-  .carousel {
+  .carousel-main {
     height: 100%;
   }
 }
