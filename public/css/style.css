@@ -43,13 +43,13 @@ footer.page-footer {
   margin: 0;
 }
 
-/*solid navbar on mobile      
+/* solid navbar on mobile */   
 @media only screen and (max-width: 768px) {
   .navbar {
     background-color: rgba(255, 92, 231, 0.9);
   }
 }
-*/
+
 
 /* navbar color transition */
 .scrolling-navbar {
@@ -98,7 +98,9 @@ footer.page-footer {
   .view-index,
   .view-articles {
     height: 100%;
-    width: 100%;
+    /*background image fix for iphone */
+    background-attachment: scroll;
+    max-width: 100%;
   }
 }
 
@@ -106,7 +108,9 @@ footer.page-footer {
   .article-page,
   .view-admin {
     height: 50%;
-    width: 100%;
+    /*background image fix for iphone */
+    background-attachment: scroll;
+    max-width: 100%;
   }
 }
         
