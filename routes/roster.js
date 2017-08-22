@@ -7,7 +7,7 @@ const Player = require('../models/player')
 const Staff = require('../models/staff')
 
 //add players to roster
-router.post('/add_player', (req, res) => {
+router.post('/add_player', ensureAuthenticated, (req, res) => {
     let playername = req.body.playername
     let jersey = req.body.jersey
 
@@ -37,7 +37,7 @@ router.post('/add_player', (req, res) => {
 })
 
 //edit player
-router.post('/edit_player', (req, res) => {
+router.post('/edit_player', ensureAuthenticated, (req, res) => {
     let playername = req.body.playername
     let newjersey = req.body.jersey
     let player_id = req.body.objid
@@ -57,7 +57,7 @@ router.post('/edit_player', (req, res) => {
 })
 
 //delete player from roster
-router.post('/delete_player', (req, res) => {
+router.post('/delete_player', ensureAuthenticated, (req, res) => {
     let player_id = req.body.objid
     console.log(`${player_id}`)
     Player.findByIdAndRemove(player_id, (err, doc) => {
@@ -68,7 +68,7 @@ router.post('/delete_player', (req, res) => {
 })
 
 //add staff
-router.post('/add_staff', (req, res) => {
+router.post('/add_staff', ensureAuthenticated, (req, res) => {
     let staffname = req.body.staffname
     let position = req.body.position
 
@@ -79,7 +79,7 @@ router.post('/add_staff', (req, res) => {
     //rerender page with errors
     let errors = req.validationErrors()
     if (errors) {
-        res.render('admin_dash/#roster', {
+        res.render('admin_dash', {
             errors: errors
         })
     } else {
@@ -93,12 +93,12 @@ router.post('/add_staff', (req, res) => {
             console.log(staff)
         })
         req.flash('success_msg', 'Staff successfully added.')
-        res.redirect('/ausite_admin/dashboard/#roster')
+        res.redirect('/ausite_admin/dashboard/#staff')
     }
 }) 
 
 //update staff
-router.post('/edit_staff', (req, res) => {
+router.post('/edit_staff', ensureAuthenticated, (req, res) => {
     let staffname = req.body.staffname
     let udpateposition = req.body.position
     let staff_id = req.body.staffid
@@ -114,18 +114,27 @@ router.post('/edit_staff', (req, res) => {
             console.log(doc)
         }
     )
-    res.redirect('/ausite_admin/dashboard/#roster')
+    res.redirect('/ausite_admin/dashboard/#staff')
 })
 
 //delete staff
-router.post('/delete_staff', (req, res) => {
+router.post('/delete_staff', ensureAuthenticated, (req, res) => {
     let staff_id = req.body.staffid
     console.log(`${staff_id}`)
     Staff.findByIdAndRemove(staff_id, (err, doc) => {
             console.log(doc)
         }
     )
-    res.redirect('/ausite_admin/dashboard/#roster')
+    res.redirect('/ausite_admin/dashboard/#staff')
 })
+
+//passed into function above as parameter
+function ensureAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        return next()
+    } else {
+        res.redirect('/ausite_admin')
+    }
+}
 
 module.exports = router

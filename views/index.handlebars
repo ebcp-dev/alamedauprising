@@ -1,208 +1,186 @@
-<!--Carousel Wrapper-->
-<div id="home" class="carousel-main slide carousel-fade white-text" 
-data-ride="carousel" data-interval="false">
-    <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-        <!-- First slide -->
-        <div class="carousel-item active view hm-black-light" 
-        style="background-image: url('images/coketourny/coketourny3.jpg'); 
-        background-repeat: no-repeat; background-size: cover; background-position: center;">
-            <!-- Caption -->
-            <div class="full-bg-img flex-center white-text">
-                <ul class="animated fadeIn col-md-12">
-                    <li>
-                        <p>We Are</p>
-                    </li>
-                    <li class="pinktext">
-                        <h1 class="h1-responsive">Alameda Uprising</h1></li>
-                    </li>
-                    <li>
-                        <p>Alameda, California</p>
-                    </li>
-                </ul>
-            </div>
-            <!-- /.Caption -->
-        </div>
-        <!--/.First slide-->
+<!--Mask-->
+<div class="view hm-black-strong">
+    <div class="full-bg-img flex-center">
+        <ul class="animated fadeInUp">
+            <li>
+                <h4 class="h4-responsive">We Are</h4>
+            <li>
+                <h1 class="h1-responsive font-bold pinktext">Alameda Uprising</h1></li>
+            </li>
+            <li>
+                <h4 class="h4-responsive">Alameda, CA</h4>
+            </li>
+        </ul>
     </div>
-    <!--/.Slides-->
 </div>
-<!--/.Carousel Wrapper-->
+<!--/.Mask-->
 
     <br>
 
 <!--Content-->
-    <div class="container content">
-        <div class="row">
-            <!--First columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
+<div class="container content">
+    <div class="row">
+        <!--First columnn-->
+        <div class="col-lg-4">
+            <!--Card-->
                 <div class="card wow fadeIn" data-wow-delay="0.2s"  id="schedule">
 
-                    <!--Card image-->
-                    <div class="view hm-cyan-light">
-                        <img src="images/coketourny/coketourny3.jpg" class="img-fluid" alt="">
-                        <div class="card card-block mask flex-center white-text">
-                            <h3 class="h3-responsive">Oakland, CA</h3>
-                            <h4 class="h4-responsive">{{schedule.0.name}}</h4>
-                            {{#if schedule.0.date}}
-                            <h5 class="text-center">{{schedule.0.date}}<br>
-                            {{/if}}
-                        </div>
+                <!--Card image-->
+                <div class="view hm-cyan-light">
+                    <img src="images/coketourny/coketourny3.jpg" class="img-fluid" alt="">
+                    <div class="card card-block mask flex-center white-text">
+                        <h3 class="h3-responsive">Oakland, CA</h3>
+                        <h4 class="h4-responsive">{{schedule.0.name}}</h4>
+                        {{#if schedule.0.date}}
+                        <h5 class="text-center">{{schedule.0.date}}<br>
+                        {{/if}}
                     </div>
-                    <!--/.Card image-->
-
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Schedule</h4>
-                        <!--Text-->
-                        <p class="card-text">See our upcoming games.</p>
-                        <a href="#gameschedule"
-                        class="btn btn-info" data-toggle="collapse"
-                        aria-expanded="false" aria-controls="gameschedule"
-                        >
-                        See Schedule
-                        </a>
-                        <div class="collapse" id="gameschedule">
-                            <div class="card-block">
-                                {{#each schedule}}
-                                <hr>
-                                <h4 class="card-title">{{name}}</h4>
-                                <p class="card-text">by {{organizer}}</p>
-                                <h4 class="card-title">{{date}}</h4>
-                                <p class="card-text">{{address}}</p>
-                                <p class="card-text">{{details}}</p>
-                                <a target="_blank" href="{{link}}" class="btn btn-primary">Click for more details</a>
-                                {{/each}}
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.Card content-->
-
                 </div>
-                <!--/.Card-->
-            </div>
-            <!--First columnn-->
+                <!--/.Card image-->
 
-            <!--Second columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
-                <div class="card wow fadeIn" data-wow-delay="0.6s" id="news">
-
-                    <!--Card image-->
-                    <div class="view hm-black-light">
-                        <img src="images/coketourny/coketourny8.jpg" class="img-fluid" alt="">
-                        <div class="mask flex-center">
+                <!--Card content-->
+                <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">Schedule</h4>
+                    <!--Text-->
+                    <p class="card-text">See our upcoming games.</p>
+                    <a href="#gameschedule"
+                    class="btn btn-info" data-toggle="collapse"
+                    aria-expanded="false" aria-controls="gameschedule"
+                    >
+                    See Schedule
+                    </a>
+                    <div class="collapse" id="gameschedule">
+                        <div class="card-block">
+                            {{#each schedule}}
+                            <hr>
+                            <h4 class="card-title">{{name}}</h4>
+                            <p class="card-text">by {{organizer}}</p>
+                            <h4 class="card-title">{{date}}</h4>
+                            <p class="card-text">{{address}}</p>
+                            <p class="card-text">{{details}}</p>
+                            <a target="_blank" href="{{link}}" class="btn btn-primary">Click for more details</a>
+                            {{/each}}
                         </div>
                     </div>
-                    <!--/.Card image-->
-                
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Announcements</h4>
-                        <!--Text-->
-                        <p class="card-text">Check out our announcements.</p>
-                        <a href="#newsection" 
-                        class="btn btn-info" data-toggle="collapse"
-                        aria-expanded="false" aria-controls="news"
-                        >
-                        News
-                        </a>
-                        <div class="collapse" id="newsection">
-                            <div class="card-block">
-                                <h4 class="card-title">TBA</h4>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.Card content-->
                 </div>
-                <!--/.Card-->
+                <!--/.Card content-->
+        
             </div>
-            <!--Second columnn-->
-            
-            <!--Third columnn-->
-            <div class="col-lg-4">
-                <!--Card-->
-                <div class="card wow fadeIn" data-wow-delay="0.4s" id="roster">
-
-                    <!--Card image-->
-                    <div class="view hm-black-light">
-                        <img src="images/coketourny/coketourny9.jpg" class="img-fluid" alt="">
-                        <div class="mask flex-center">
-                        </div>
-                    </div>
-                    <!--/.Card image-->
-
-                    <!--Card content-->
-                    <div class="card-block">
-                        <!--Title-->
-                        <h4 class="card-title">Roster</h4>
-                        <!--Text-->
-                        <p class="card-text">Meet our players and coaching staff.</p>
-                        <a href="#rosterlist" 
-                        class="btn btn-info" data-toggle="collapse"
-                        aria-expanded="false" aria-controls="rosterlist"
-                        >
-                        See Roster
-                        </a>
-                        <div class="collapse" id="rosterlist">
-                            <div class="card-block texter-center">
-                                <h3 class="h3-responsive text-center">PLAYERS</h3>
-                                <ul class="list-group">
-                                    {{#each rosterlist}}
-                                    <li class="list-group-item justify-content-between">
-                                        {{name}}
-                                        <span class="badge badge-info">{{jersey}}</span>
-                                    </li>
-                                    {{/each}}
-                                </ul>
-                                <br>
-                                <h3 class="h3-responsive text-center">HEAD COACH</h3>
-                                <ul class="list-group">
-                                {{#each stafflist}}
-                                    {{#eq position 'Head Coach'}}
-                                    <li class="list-group-item justify-content-between">
-                                        {{name}}
-                                    </li>
-                                    {{/eq}}
-                                {{/each}}
-                                </ul>
-                                <br>
-                                <h3 class="h3-responsive text-center">ASSISTANT COACHES</h3>
-                                <ul class="list-group">
-                                {{#each stafflist}}
-                                    {{#eq position 'Assistant Coach'}}
-                                    <li class="list-group-item justify-content-between">
-                                        {{name}}
-                                    </li>
-                                    {{/eq}}
-                                {{/each}}
-                                </ul>
-                                <br>
-                                <h3 class="h3-responsive text-center">GENERAL MANAGER</h3>
-                                <ul class="list-group">
-                                {{#each stafflist}}
-                                    {{#eq position 'General Manager'}}
-                                    <li class="list-group-item justify-content-between">
-                                        {{name}}
-                                    </li>
-                                    {{/eq}}
-                                {{/each}}
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                    <!--/.Card content-->
-
-                </div>
-                <!--/.Card-->
-            </div>
-            <!--Third columnn-->
+            <br>
+            <!--/.Card-->
         </div>
+        <!--First columnn-->
+
+        <!--Second columnn-->
+        <div class="col-lg-4">
+            <!--Card-->
+            <div class="card wow fadeIn" data-wow-delay="0.6s" id="news">
+
+                <!--Card image-->
+                <div class="view hm-black-light">
+                    <img src="images/coketourny/coketourny8.jpg" class="img-fluid" alt="">
+                    <div class="mask flex-center">
+                    </div>
+                </div>
+                <!--/.Card image-->
+                
+                <!--Card content-->
+                <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">Announcements</h4>
+                    <!--Text-->
+                    <p class="card-text">Check out our announcements, articles, news.</p>
+                    <a href="/" class="btn btn-info">TBA</a>
+                </div>
+                <!--/.Card content-->
+            </div>
+            <!--/.Card-->
+            <br>
+        </div>
+        <!--Second columnn-->
+            
+        <!--Third columnn-->
+        <div class="col-lg-4">
+            <!--Card-->
+            <div class="card wow fadeIn" data-wow-delay="0.4s" id="roster">
+
+                <!--Card image-->
+                <div class="view hm-black-light">
+                    <img src="images/coketourny/coketourny9.jpg" class="img-fluid" alt="">
+                    <div class="mask flex-center">
+                    </div>
+                </div>
+                <!--/.Card image-->
+
+                <!--Card content-->
+                <div class="card-block">
+                    <!--Title-->
+                    <h4 class="card-title">Roster</h4>
+                    <!--Text-->
+                    <p class="card-text">Meet our players and coaching staff.</p>
+                    <a href="#rosterlist" 
+                    class="btn btn-info" data-toggle="collapse"
+                    aria-expanded="false" aria-controls="rosterlist"
+                    >
+                    See Roster
+                    </a>
+                    <div class="collapse" id="rosterlist">
+                        <div class="card-block texter-center">
+                            <h3 class="h3-responsive text-center">PLAYERS</h3>
+                            <ul class="list-group">
+                                {{#each rosterlist}}
+                                <li class="list-group-item justify-content-between">
+                                    {{name}}
+                                    <span class="badge badge-info">{{jersey}}</span>
+                                </li>
+                                {{/each}}
+                            </ul>
+                            <br>
+                            <h3 class="h3-responsive text-center">HEAD COACH</h3>
+                            <ul class="list-group">
+                            {{#each stafflist}}
+                                {{#eq position 'Head Coach'}}
+                                <li class="list-group-item justify-content-between">
+                                    {{name}}
+                                </li>
+                                {{/eq}}
+                            {{/each}}
+                            </ul>
+                            <br>
+                            <h3 class="h3-responsive text-center">ASSISTANT COACHES</h3>
+                            <ul class="list-group">
+                            {{#each stafflist}}
+                                {{#eq position 'Assistant Coach'}}
+                                <li class="list-group-item justify-content-between">
+                                    {{name}}
+                                </li>
+                                {{/eq}}
+                            {{/each}}
+                            </ul>
+                            <br>
+                            <h3 class="h3-responsive text-center">GENERAL MANAGER</h3>
+                            <ul class="list-group">
+                            {{#each stafflist}}
+                                {{#eq position 'General Manager'}}
+                                <li class="list-group-item justify-content-between">
+                                    {{name}}
+                                </li>
+                                {{/eq}}
+                            {{/each}}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!--/.Card content-->
+
+            </div>
+            <!--/.Card-->
+        </div>
+        <!--Third columnn-->
     </div>
-    <!--/.Content-->
+</div>
+<!--/.Content-->
 
 
 

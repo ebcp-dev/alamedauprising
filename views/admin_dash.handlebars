@@ -1,3 +1,18 @@
+<!--Mask-->
+<div class="view view-admin hm-black-strong">
+    <div class="full-bg-img flex-center">
+        <ul class="animated fadeInUp">
+            <li>
+                <h2 class="h2-responsive font-bold pinktext">Admin Dashboard</h2>
+            </li>
+            <li>
+                <h3 class="h3-responsive">Manage Roster, Staff, Articles, Schedule (In progress)</h3>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--/.Mask-->
+
 <main>
     <!--Main layout-->
     <div class="container">
@@ -11,13 +26,10 @@
                 </div>
             {{/each}}
         {{/if}}
-        <div class="row wow fadeIn admin-jumbo" data-wow-delay="0.2s">
+        <div class="row wow fadeIn" data-wow-delay="0.2s">
             <div class="col-md-12">
                 <div class="jumbotron">
-                    <h2 class="h2-responsive">Admin Dashboard</h2>
-                    <br>
-                    <hr>
-                    <p>Manage Roster, Staff, Schedule (In progress), Articles (In progress)</p>
+                    <p>Manage Roster, Staff, Articles, Schedule (In progress)</p>
                     <a target="_blank" href="/" class="btn btn-unique btn-ptc">Visit website</a>
                     <a href="/ausite_admin/register_admin" class="btn btn-unique btn-ptc">Create new admin</a>
                 </div>
@@ -77,7 +89,7 @@
                             aria-expanded="false" aria-controls="articleid{{_id}}">
                             Edit article
                         </a>
-                        <a href="#" class="btn btn-primary">See live article</a>
+                        <a href="/articles/{{link}}" target="_blank" class="btn btn-primary">See live article</a>
                         <div class="container-fluid">
                             <div class="collapse" id="articleid{{_id}}">
                                 <form method="post" action="/articles/edit_article">
@@ -93,8 +105,13 @@
                                         <p>Last edited:</p>
                                         <p>{{date}}</p>
                                     </div>
+                                    Overview
                                     <div class="md-form">
-                                        <textarea type="text" name="text" class="form-control">{{body}}</textarea>
+                                        <textarea type="text" name="overview" class="form-control editable overview">{{overview}}</textarea>
+                                    </div>
+                                    Body
+                                    <div class="md-form">
+                                        <textarea type="text" name="text" class="form-control editable">{{body}}</textarea>
                                     </div>
                                     <input style="display: none;" value="{{_id}}" name="articleid">
                                     <div class="text-center">
@@ -127,8 +144,13 @@
                                 <input type="text" name="author" class="form-control"
                                  placeholder="Author">
                             </div>
+                            Overview
                             <div class="form-group">
-                                <textarea placeholder="Type here" type="text" name="text" class="form-control"></textarea>
+                                <textarea type="text" name="overview" class="form-control editable overview"></textarea>
+                            </div>
+                            Body
+                            <div class="form-group">
+                                <textarea type="text" name="text" class="form-control editable"></textarea>
                             </div>
                             <div class="text-center">
                                 <button class="btn btn-cyan">Submit</button>
@@ -138,11 +160,12 @@
                 </div>
             </div>
             <!--Second columnn-->
-        <!-- Third row -->
         </div>
+        
+        <!-- Third row -->
         <div class="row">
             <!--Third columnn-->
-            <div class="col-lg-6" id="schedule">
+            <div class="col-lg-4" id="schedule">
                 <div class="jumbotron">
                     <h4 class="card-title">Schedule (In progress)</h4>
                     <hr>
@@ -172,7 +195,7 @@
             <!--Third columnn-->
 
             <!--Fourth columnn-->
-            <div class="col-lg-6" id="roster">
+            <div class="col-lg-4" id="roster">
                 <div class="jumbotron">
                     <h4 class="card-title">Roster</h4>
                     <hr>
@@ -180,9 +203,9 @@
                         {{#each rosterlist}}
                         <li class="list-group-item justify-content-between align-middle">
                             <div class="d-flex w-100 justify-content-between">
-                                <h5 class="mb-1">Name: {{name}}</h5>
+                                <h5 class="h5-responsive">Name: {{name}}</h5>
+                                <h5 class="h5-responsive">Jersey: {{jersey}}</h5>
                             </div>
-                            <p class="mb-1">Jersey: {{jersey}}</p>
                             <a href="#edit{{_id}}" data-toggle="collapse" class="btn btn-unique btn-ptc" 
                                 aria-expanded="false" aria-controls="edit{{_id}}">
                                 Edit Player
@@ -235,8 +258,13 @@
                             </div>
                         </form>
                     </div>
-                    <hr>
+                </div>
+            </div>
+            <!--Fourth columnn-->
 
+            <!--Fifth columnn-->
+            <div class="col-lg-4" id="staff">
+                <div class="jumbotron">
                     <!-- Staff -->
                     <h4 class="card-title">Staff</h4>
                     <hr>
@@ -245,8 +273,8 @@
                         <li class="list-group-item justify-content-between">
                             <div class="d-flex w-100 justify-content-between">
                                 <h5 class="mb-1">Name: {{name}}</h5>
+                                <h5 class="mb-1">Role: {{position}}</h5>
                             </div>
-                            <p class="mb-1">Role: {{position}}</p>
                             <a href="#edit{{_id}}" data-toggle="collapse" class="btn btn-unique btn-ptc" 
                             aria-expanded="false" aria-controls="edit{{_id}}">
                                 Edit Staff
@@ -312,7 +340,7 @@
                     aria-expanded="false" aria-controls="addstaff">
                         Add staff
                     </a>
-                    <!-- edit roster form -->
+                    <!-- edit staff form -->
                     <div class="collapse" id="addstaff">
                         <form method="post" action="/roster/add_staff">
                             <div class="md-form">
@@ -345,7 +373,7 @@
                     </div>
                 </div>
             </div>
-            <!--Fourth columnn-->
+            <!--Fifth columnn-->
         </div>
         <!--/.Second row-->
     </div>

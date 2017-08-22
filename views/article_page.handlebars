@@ -1,0 +1,27 @@
+<!--Mask-->
+<div class="view view-articles article-page hm-black-strong">
+    <div class="full-bg-img flex-center">
+        <ul class="animated fadeInUp">
+            <li>
+                <h1 class="h1-responsive font-bold pinktext">{{article.title}}</h1></li>
+            </li>
+            <li>
+                <h4 class="h4-responsive">by {{article.author}}.</h4>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--/.Mask-->
+
+<br>
+
+<div class="container">
+    <div class="jumbotron">
+        <p>{{article.date}}</p>
+        {{{article.overview}}}
+        <hr class="my-2">
+        {{{article.body}}}
+        <hr class="my-2">
+    </div>
+    <br>
+</div>

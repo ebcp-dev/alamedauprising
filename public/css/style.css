@@ -1,17 +1,11 @@
 html,
-body {
+body{
   height: 100%;
-  background-color: #FFF;
 }
 
- main {
+main {
   padding-top: 3rem;
-  padding-bottom: 2rem;
-  background-color: #a6a6a6;
-}
-
-.admin-jumbo {
-  margin-top: 50px;
+  background-color: #333;
 }
 
 .extra-margins {
@@ -56,13 +50,42 @@ footer.page-footer {
   }
 }
 */
-        
+
+/* navbar color transition */
 .scrolling-navbar {
   -webkit-transition: background .5s ease-in-out, padding .5s ease-in-out;
   -moz-transition: background .5s ease-in-out, padding .5s ease-in-out;
   transition: background .5s ease-in-out, padding .5s ease-in-out;
 }
-/* Carousel*/
+
+/* index page image*/
+.view {
+    background: url("../images/coketourny/coketourny3.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 45%;
+}
+
+.view-articles {
+    background: url("../images/coketourny/coketourny9.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 45%;
+}
+
+.view-admin {
+    background: url("../images/coketourny/coketourny11.jpg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 30%;
+}
+
 .carousel-sched {
   height: 20%;
 }
@@ -71,23 +94,18 @@ footer.page-footer {
   color: #FF5CE7;
 }
 
-.carousel-main {
-  height: 50%;
-}
-        
 @media (max-width: 776px) {
-  .carousel-main {
+  .view,
+  .view-articles {
     height: 100%;
   }
 }
-        
-.carousel-item,
-  .active {
-    height: 100%;
-}
-        
-.carousel-inner {
-  height: 100%;
+
+@media (max-width: 776px) {
+  .article-page,
+  .view-admin {
+    height: 50%;
+  }
 }
         
 /*Caption*/
@@ -128,17 +146,18 @@ footer.page-footer {
     -webkit-border-radius: 10px;
     border-radius: 10px;
 }
+
 /* Handle */
 
 ::-webkit-scrollbar-thumb {
     -webkit-border-radius: 10px;
     border-radius: 10px;
-    background: #00FDFF;
+    background: #787878;
     -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
 }
 
 ::-webkit-scrollbar-thumb:window-inactive {
-   background: #00FDFF;
+   background: #787878;
 }
 
 /* Sign-in form */
@@ -156,7 +175,11 @@ footer.page-footer {
 
 /* Textarea */
 
-textarea {
-  width: 200px;
+textarea, .editable {
+  width: 100%;
   height: 300px;
+}
+
+.overview {
+  height: 100px;
 }

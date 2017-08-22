@@ -9,11 +9,14 @@ const ArticleSchema = mongoose.Schema({
     date: {
         type: Date,
         default: Date.now
-    }
+    },
+    link: String,
+    overview: String
 })
 
 var Article = module.exports = mongoose.model('Article', ArticleSchema)
 
+//create new article
 module.exports.addArticle = (newArticle, callback) => {
     newArticle.save(callback)
 }

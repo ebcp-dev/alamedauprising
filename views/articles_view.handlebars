@@ -1,0 +1,55 @@
+<!--Mask-->
+<div class="view view-articles hm-black-strong">
+    <div class="full-bg-img flex-center">
+        <ul class="animated fadeInUp">
+            <li>
+                <h2 class="h2-responsive font-bold pinktext">ALAMEDA UPRISING ARTICLES</h2>
+            </li>
+            <li>
+                <h3 class="h3-responsive">Read our articles, news, announcements</h3>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--/.Mask-->
+
+<!--Main layout-->
+<div class="container content">
+
+    <div class="row">
+
+        <!--Main column-->
+        <div class="col-lg-8">
+
+            {{#each articlelist}}
+            <!--Post-->
+            <div class="post-wrapper wow fadeIn" data-wow-delay="0.4s">
+                <!--Post data-->
+                <h1 class="h1-responsive font-bold mt-5">{{title}}</h1>
+                <h6>Written by <strong>{{author}}</strong>, {{date}}</h6>
+
+                <br>
+
+                <!--Featured image -->
+                <div class="view overlay z-depth-1-half">
+                    <img src="/images/coketourny/coketourny5.jpg" class="img-fluid " alt="">
+                    <div class="mask">
+                    </div>
+                </div>
+
+                <br>
+
+                <!--Post excerpt-->
+                {{{overview}}}
+
+                <!--"Read more" button-->
+                <a href="/articles/{{link}}" class="btn btn-tw">Read more</a>
+            </div>
+            <!--/.Post-->
+            <hr>
+            {{/each}}
+        </div>
+
+    </div>
+</div>
+<!--/.Main layout-->
