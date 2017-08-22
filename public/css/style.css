@@ -59,7 +59,7 @@ footer.page-footer {
 }
 
 /* index page image*/
-.view {
+.view-index {
     background: url("../images/coketourny/coketourny1.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -95,9 +95,10 @@ footer.page-footer {
 }
 
 @media (max-width: 776px) {
-  .view,
+  .view-index,
   .view-articles {
     height: 100%;
+    width: 100%;
   }
 }
 
@@ -105,6 +106,7 @@ footer.page-footer {
   .article-page,
   .view-admin {
     height: 50%;
+    width: 100%;
   }
 }
         
