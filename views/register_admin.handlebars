@@ -1,38 +1,22 @@
-<main>
-    <h2 class="page-header register-form">Create Admin</h2>
+<!--Mask-->
+<div class="view view-admin hm-black-strong">
+    <div class="full-bg-img flex-center">
+        <ul class="animated fadeInUp">
+            <li>
+                <h2 class="h2-responsive font-bold pinktext">Register new admin</h2>
+            </li>
+            <li>
+                <h3 class="h3-responsive">Create a new admin account.</h3>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--/.Mask-->
 
-    <!-- Register form -->
-    <div class="container-fluid">
-        <div class="jumbotron">
-            <form method="post" action="/ausite_admin/register_admin">
+<br>    
 
-                <div class="md-form">
-                    <input type="text" name="name" class="form-control"
-                    placeholder="Your name">
-                </div>
-                <div class="md-form">
-                    <input type="text" name="username" class="form-control"
-                    placeholder="Username">
-                </div>
-                <div class="md-form">
-                    <input type="text" name="email" class="form-control"
-                    placeholder="Your email">
-                </div>
-                <div class="md-form">
-                    <input type="password" name="password" class="form-control"
-                    placeholder="Your password">
-                </div>
-                <div class="md-form">
-                    <input type="password" name="password2" class="form-control"
-                    placeholder="Confirm password">
-                </div>
-                <div class="text-center">
-                    <button class="btn btn-deep-orange">Sign up</button>
-                </div>
-
-            </form>
-        </div>
-        
+<!-- Register form -->
+<div class="container-fluid">
     {{#if errors}}
         {{#each errors}}
             <div class="alert alert-danger">
@@ -41,6 +25,34 @@
             </div>
         {{/each}}
     {{/if}}
+    <div class="jumbotron">
+        <form method="post" action="/ausite_admin/register_admin">
+
+            <div class="md-form">
+                <input type="text" name="name" class="form-control"
+                placeholder="Your name">
+            </div>
+            <div class="md-form">
+                <input type="text" name="username" class="form-control"
+                placeholder="Username">
+            </div>
+            <div class="md-form">
+                <input type="text" name="email" class="form-control"
+                placeholder="Your email">
+            </div>
+            <div class="md-form">
+                <input type="password" name="password" class="form-control"
+                placeholder="Your password">
+            </div>
+            <div class="md-form">
+                <input type="password" name="password2" class="form-control"
+                placeholder="Confirm password">
+            </div>
+            <div class="text-center">
+                <button class="btn btn-deep-orange">Sign up</button>
+            </div>
+
+        </form>
     </div>
-    <!-- Register form -->
-</main>
+</div>
+<!-- Register form -->

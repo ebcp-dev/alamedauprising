@@ -62,7 +62,7 @@ function ensureAuthenticated(req, res, next) {
 }
 
 //post admin registration form
-router.post('/register_admin', (req, res) => {
+router.post('/register_admin', ensureAuthenticated, (req, res) => {
     let username = req.body.username
     let name = req.body.name
     let email = req.body.email
@@ -146,7 +146,7 @@ router.get('/logout', function(req, res) {
 })
 
 //update admin credentials
-router.post('/update_profile', (req, res) => {
+router.post('/update_profile', ensureAuthenticated, (req, res) => {
     let name = req.body.name
     let username = req.body.username
     let update_email = req.body.email

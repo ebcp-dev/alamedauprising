@@ -35,11 +35,11 @@ main {
 }*/
         
 .top-nav-collapse {
-  background-color: #FF5CE7;
+  background-color: #F300EB;
 }
         
 footer.page-footer {
-  background-color: #FF5CE7;
+  background-color: #00F1EA;
   margin: 0;
 }
 
@@ -60,7 +60,7 @@ footer.page-footer {
 
 /* index page image*/
 .view {
-    background: url("../images/coketourny/coketourny3.jpg")no-repeat center center fixed;
+    background: url("../images/coketourny/coketourny1.jpg")no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
