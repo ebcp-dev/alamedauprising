@@ -43,6 +43,10 @@ footer.page-footer {
   margin: 0;
 }
 
+.contactinfo {
+  color: #222;
+}
+
 /* solid navbar on mobile */   
 @media only screen and (max-width: 768px) {
   .navbar {

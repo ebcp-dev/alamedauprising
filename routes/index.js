@@ -27,16 +27,6 @@ AsyncPolling(function (end) {
 }, 3000).run();
 
 var schedule = [
-    {
-        name: "Tournament of Champions",
-        organizer: "Bay Area Sports",
-        date: "August 26-27",
-        time: "",
-        address: "31 4th Street Oakland, CA 94607",
-        location: "Oakland, CA",
-        details: "Jamtown, City College of San Francisco",
-        link: "http://bayareasports.org/"
-    }
 ]
 
 //get homepage
